@@ -8,7 +8,7 @@ What has changed in this version of the Community Edition?
 
 **New in this Update:**
 
-⭐ Massive Admin included by default (repsponsive admin + user manager + much much more...).
+⭐ Massive Admin included by default (responsive admin + user manager + much much more...).
 
 ⭐ New Admin themes option.
 
