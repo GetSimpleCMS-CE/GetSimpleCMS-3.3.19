@@ -1,0 +1,85 @@
+#
+# GetSimple CMS htaccess ROOT file
+# apache 2.4 
+#
+
+# The following require certain allow overrides, if getting 500 error comment them out one by one 
+# can be resolved in apache httpd.conf to ensure security alternatives
+
+#Redirect HTTP to HTTPS (change example.com to proper domain)
+#RewriteCond %{REQUEST_URI} !^/[0-9]+\..+\.cpaneldcv$
+#RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+#RewriteCond %{SERVER_PORT} 80 
+#RewriteRule ^(.*)$ https://www.example.com/$1 [R=301,L]
+
+# Rewrite domain.com -> www.domain.com -- used with SEO Strict URLs plugin
+#RewriteCond %{HTTP_HOST} !^$
+#RewriteCond %{HTTP_HOST} !^www\. [NC]
+#RewriteCond %{HTTP_HOST} (.+)$
+#RewriteRule ^(.*)$ http://www.%1/$1 [R=permanent,L] . 
+
+# Enable gzip compression
+#AddOutputFilterByType DEFLATE text/text text/html text/plain text/xml text/css application/x-javascript application/javascript
+
+# override charset
+AddDefaultCharset UTF-8
+
+# prevent directory listings
+Options -Indexes
+
+# Follow symbolink links, This is required for rewrites on some hosts
+Options +FollowSymLinks
+
+# Set the default handler.
+DirectoryIndex index.php
+
+# blocks direct access to the XML files - they hold all the data!
+<Files ~ "\.xml$">
+	<IfModule !mod_authz_core.c>
+		Deny from all
+	</IfModule>
+	<IfModule mod_access_compat.c>
+		Deny from all
+	</IfModule>
+	<IfModule mod_authz_core.c>
+		<IfModule !mod_access_compat.c>
+			Require all denied
+		</IfModule>
+	</IfModule>	
+</Files>
+
+<Files sitemap.xml>
+	<IfModule !mod_authz_core.c>
+		Allow from all
+	</IfModule>
+	<IfModule mod_access_compat.c>
+		Allow from all
+	</IfModule>
+	<IfModule mod_authz_core.c>
+		<IfModule !mod_access_compat.c>
+			Require all granted
+		</IfModule>
+	</IfModule>	
+</Files>
+
+# handle rewrites for fancy urls
+<IfModule mod_rewrite.c>
+	RewriteEngine on
+
+	# Usually RewriteBase is just '/', but 
+	# replace it with your subdirectory path
+	RewriteBase **REPLACE**
+	
+	# News Manager:
+	RewriteRule ^noticias/tag/([^/.]+)/archive/([^/.]+)/?$ index.php?id=noticias&tag=$1&archive=$2 [L]
+	RewriteRule ^noticias/tag/([^/.]+)/page/([^/.]+)/?$ index.php?id=noticias&tag=$1&page=$2 [L]
+	RewriteRule ^noticias/tag/([^/.]+)/?$ index.php?id=noticias&tag=$1 [L]
+	RewriteRule ^noticias/post/([^/.]+)/?$ index.php?id=noticias&post=$1 [L]
+	RewriteRule ^noticias/page/([^/.]+)/?$ index.php?id=noticias&page=$1 [L]
+	RewriteRule ^noticias/archive/([^/.]+)/?$ index.php?id=noticias&archive=$1 [L]
+	# end News Manager
+
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteRule /?([A-Za-z0-9_-]+)/?$ index.php?id=$1 [QSA,L]
+</IfModule>

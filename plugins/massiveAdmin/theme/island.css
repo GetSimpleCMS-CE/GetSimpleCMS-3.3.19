@@ -1,0 +1,39 @@
+@import url('massive.css');
+
+.toper {background: #339AF0;}
+#header {background: #0E80CB;}
+:root {--main-color: #0E80CB;}
+.wrapper .nav li a:link, .wrapper .nav li a:visited, .wrapper #pill li a:link, .wrapper #pill li a:visited {color: #EEEEEE; font-weight: 600 !important;}
+
+.leftnav .uil-power {color: #CC0000;} /* logout icon*/
+.nav .uil-tag { color: #FF9900;} /* custom menu icon */
+.wrapper table tr#tr-index a::before { content:url('https://api.iconify.design/fa-solid/home.svg?color=%230e80cb'); width: 15px; height: 15px; position: absolute; left: -15px; top: 12px; border-radius: 0px; cursor: pointer; transition: all 250ms ease; display: flex; align-items: center; justify-content: center;}
+
+.massive-folder-linker {background: #FFAD34!important; border-radius:5px;}
+.Documents .massive-folder-linker {background:LightGrey!important;}
+.Compressed .massive-folder-linker {background:LightGrey!important;}
+.Video .massive-folder-linker {background:Lavender!important;}
+.Audio .massive-folder-linker {background:Lavender!important;}
+.imgthumb a img, :link img, :visited img {border-radius: 5px;}
+.masive-uploader {background: #339AF0;}
+.masive-uploader input[type="submit"] {background: #00162a;}
+.masive-uploader p {color: #00162a;}
+.masive-uploader h3 {color: #ffffff; font-weight: bold;}
+.masive-uploader span {background: #00162a;}
+.masive-uploader h3::before {content: url('https://api.iconify.design/fa/cloud-upload.svg?color=%23ffffff'); width: 25px; height: 25px; border-radius: 0px; cursor: pointer; transition: all 250ms ease; display: flex; align-items: center; justify-content: center; float: left; margin-right: 10px;}
+#upload #sidebar > div h3::before {content: url('https://api.iconify.design/fa/cloud-upload.svg?color=%23ffffff'); width: 25px; height: 25px; border-radius: 0px; cursor: pointer; transition: all 250ms ease; display: flex; align-items: center; justify-content: center; float: left; margin-right: 10px;}
+#sidebar > div:nth-child(2){background: #339AF0 !important;}
+#sidebar > div:nth-child(2) > form:nth-child(2) > input:nth-child(4){background: #0E80CB !important; border: #414141 solid 1px !important;}
+
+input[type="submit"] {background: #8CC63F !important;}
+input.cleanthumb {background: #F00 !important;}
+input.mb_edit.mb_edit_delete {background: #F00 !important;}
+
+#metadata_window input, #metadata_window select, #metadata_window textarea {padding:7px;font-size:1em;border-radius:5px;}
+#metadata_window #menu-items {height: 65px;background: #339af0;border-radius:5px;}
+#metadata_window textarea {height: 85px;}
+#edit_window input#post-title {padding: 7px;font-weight: 590;color: #444;}
+
+form input.text, form select.text {padding: 7px;font-size: 1em;border-radius: 5px;}
+
+#gsdebug {border: 1px solid #C00;}
