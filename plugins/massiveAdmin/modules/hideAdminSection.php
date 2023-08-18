@@ -275,4 +275,7 @@ if (isset($_POST['submit'])) {
 	global $MA;
 	$MA->submitHideAdminSection();
 }; 
+
+
+
 ?>
