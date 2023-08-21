@@ -21,6 +21,9 @@ if (basename($_SERVER['PHP_SELF']) == 'gsconfig.php') {
 # Turn off auto-generation of SALT and use a custom value. Used for cookies & upload security.
 # define('GSUSECUSTOMSALT', 'your_new_salt_value_here');
 
+# Login Page Default Language;
+$LANG = 'en_EN'; // es_ES, pl_PL, de_DE, uk_UK, etc.
+
 # Change the administrative panel folder name
 # define('GSADMIN', 'admin');
 

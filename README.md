@@ -6,7 +6,13 @@ What has changed in this version of the Community Edition?
 🚀 **_Added support for php7.4-8.2_**
 
 
-**New in this Update:**
+**Whats New in this Update:**
+
+🌐 11 default languages included (de, es, en, fr, it, ja, nl, pl, pt, ru, uk)
+
+⭐ New gsconfig option (set login page language)
+
+**Recent Updates:**
 
 ⭐ Massive Admin included by default (responsive admin + user manager + much much more...).
 
@@ -85,12 +91,7 @@ SimpleXML
 Javascript Enabled
 
 ### Server ###
-*Apache ( required for out of the box security using .htaccess )
-
-*If not using Apache you will get a non-apache warning, 
-this warning is to alert you that your data files will not be secure 
-and you must take proper precautions to secure your site.
-To disable this warning see gsconfig definition GSNOAPACHECHECK
+*Apache ( recommended for out of the box security using .htaccess )
 
 
 INSTALLATION:
