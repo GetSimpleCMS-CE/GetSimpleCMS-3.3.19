@@ -1,4 +1,4 @@
-CKEDITOR.plugins.setLang( 'spacingsliders', 'en', {
+CKEDITOR.plugins.setLang( 'spacingsliders', 'de', {
 	title: 'Line and Letter Spacing',
 	labels: {
 		lineheight: 'Line Height',
