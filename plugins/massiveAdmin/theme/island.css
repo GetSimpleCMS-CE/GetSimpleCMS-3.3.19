@@ -1,13 +1,16 @@
 @import url('massive.css');
 
-.toper {background: #339AF0;}
-#header {background: #0E80CB;}
 :root {--main-color: #0E80CB;}
+.toper {background: #339AF0;}
+#header {background: var(--main-color);}
+
+.wrapper table tr#tr-index a {margin-left: 20px;}
+.wrapper table tr#tr-index a::before {content: url('https://api.iconify.design/fa-solid/home.svg?color=%230e80cb'); position: absolute; top: 12px; border-radius: 0px; cursor: pointer; transition: all 250ms ease; display: flex; left:0;}
+.wrapper table tr#tr-index.l-0 td.secondarylink a::before {content: normal;}
 .wrapper .nav li a:link, .wrapper .nav li a:visited, .wrapper #pill li a:link, .wrapper #pill li a:visited {color: #EEEEEE; font-weight: 600 !important;}
 
 .leftnav .uil-power {color: #CC0000;} /* logout icon*/
 .nav .uil-tag { color: #FF9900;} /* custom menu icon */
-.wrapper table tr#tr-index a::before { content:url('https://api.iconify.design/fa-solid/home.svg?color=%230e80cb'); width: 15px; height: 15px; position: absolute; left: -15px; top: 12px; border-radius: 0px; cursor: pointer; transition: all 250ms ease; display: flex; align-items: center; justify-content: center;}
 
 .massive-folder-linker {background: #FFAD34!important; border-radius:5px;}
 .Documents .massive-folder-linker {background:LightGrey!important;}
