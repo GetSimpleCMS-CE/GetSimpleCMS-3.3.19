@@ -3,7 +3,13 @@ $massiveHiddenSection = GSDATAOTHERPATH . '/massiveHiddenSection/';
 $filejson = 'userhidden.json';
 $finaljson = $massiveHiddenSection . $filejson;
 
-$datee = @file_get_contents($finaljson);
+
+if (!file_exists($massiveHiddenSection)) {
+    mkdir($massiveHiddenSection, 0755);
+    file_put_contents($finaljson, '');
+};
+
+$datee = file_get_contents($finaljson);
 $data = json_decode($datee);
 
 

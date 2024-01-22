@@ -37,14 +37,14 @@ $i18n = [
 	'SHOW' 				=> 'Показать',
 	'HIDE' 				=> 'Скрыть',
 	'HIDSECTIONTITLE' 	=> 'Какие разделы вы хотите скрыть?',
-	'HIDEPAGES' 		=> 'Скрыть раздел "<strong><i class="uil uil-desktop"></i> Страницы</strong>"?',
-	'HIDEFILES' 		=> 'Скрыть раздел "<strong><i class="uil uil-file"></i> Файлы</strong>"?',
-	'HIDETHEMES' 		=> 'Скрыть раздел "<strong><i class="uil uil-paint-tool"></i> Темы</strong>"?',
-	'HIDEBACKUP' 		=> 'Скрыть раздел "<strong><i class="uil uil-save"></i>Резервное копирование</strong>"?',
-	'HIDEPLUGIN' 		=> 'Скрыть раздел "<strong><i class="uil uil-plug"></i> Плагины</strong>"?',
-	'HIDESUPPORT' 		=> 'Скрыть раздел "<strong><i class="uil uil-plug"></i> Поддержка</strong>"?',
-	'HIDESETTINGS' 		=> 'Скрыть раздел "<strong><i class="uil uil-plug"></i> Настройки MassiveAdmin</strong>"?',
-	'HIDEI18NGALLERY' 	=> 'Скрыть раздел "<strong><i class="uil uil-images"></i> Галерея i18n</strong>"? (если плагин установлен)',
+	'HIDEPAGES' 		=> 'Скрыть раздел "<strong>Страницы</strong>"?',
+	'HIDEFILES' 		=> 'Скрыть раздел "<strong>Файлы</strong>"?',
+	'HIDETHEMES' 		=> 'Скрыть раздел "<strong>Темы</strong>"?',
+	'HIDEBACKUP' 		=> 'Скрыть раздел "<strong>Резервное копирование</strong>"?',
+	'HIDEPLUGIN' 		=> 'Скрыть раздел "<strong>Плагины</strong>"?',
+	'HIDESUPPORT' 		=> 'Скрыть раздел "<strong>Поддержка</strong>"?',
+	'HIDESETTINGS' 		=> 'Скрыть раздел "<strong>Настройки MassiveAdmin</strong>"?',
+	'HIDEI18NGALLERY' 	=> 'Скрыть раздел "<strong>Галерея i18n</strong>"? (если плагин установлен)',
 	'HIDEUSERS' 		=> 'Скрыть разделы для следующих пользователей:',
 
 	//user manager
@@ -126,20 +126,43 @@ $i18n = [
 	"TAB_SETTINGS"					=> 'Настройки',
 	"TAB_LOGOUT"					=> 'Выход',
 
-	//новое в 4.0
+	//makeFileInTheme
+	"CREATENEWFILE"					=> 'Создать новый файл',
+	"FILECREATED"					=> 'Файл создан!',
+	
+	//frontend settings
 
-	//настройки администратора
+
+	//new on 4.0
+
+	//admin settings
 
 	'FRONTENDTITLE' => 'Настройки внешнего интерфейса',
 	'TURNONMTOPER' => 'Включить интерфейсную панель?',
 	'STYLEINFO' => 'Стиль боковой панели FrontEnd',
 	'ADMINTHEMESELECTOR' => 'Выбор темы администратора',
 
-	// Управление пользователями
+	//manage users
 
-	'ЭЛЕКТРОННАЯ ПОЧТА' => 'электронная почта:',
-	'ПАРОЛЬ' => 'Пароль:',
-	'ЯЗЫК' => 'Язык:',
-	'CHANGEPLACEHOLDER' => 'изменить, только если вы хотите изменить'
+	'EMAIL' => 'электронная почта:',
+	'PASSWORD' => 'Пароль:',
+	'LANG' => 'Язык:',
+	'CHANGEPLACEHOLDER' => 'изменить, только если вы хотите изменить',
 
-];;
+
+	//new on 5.0
+
+	'FILECREATED' 					=> 'Файл создан!',
+	'WATCHEXAMPLE' 					=> 'Просмотреть структуру примера',
+	'HOWUSETHEMECONFIG' 			=> 'Если вы хотите использовать настройки для своего шаблона, просто создайте <code style="color:blue;">settings.json</code> в папке используемого шаблона и примените соответствующую структуру как в примере. Затем примените <b style="color:green;">mats("fieldname")</b> или <b style="color:green;">r_mats("fieldname")</b> для функции возврата к соответствующие поля.',
+	'HOWCREATETITLE' 				=> 'Как создать свои настройки?',
+	'TUTORIALHOWCREATESETTINGS' 	=> 'Создайте свой <code style="color:blue;">settings.json</code> в корне папки вашей темы со структурой, основанной на этом примере, с различными типами параметров',
+	'THEMECONFIGURATORNAME' 		=> 'Конфигуратор тем',
+
+	'BACKUPCREATOR' 				=> 'Создатель резервной копии',
+	'CREATEBACKUP' 					=> 'Создать резервную копию',
+	'SETTINGS' 						=> 'Настройки',
+	'NOSETTINGSCREATED' 			=> 'Settings.json не создан.',
+	'SHOWPASSWORD' 					=> 'Показать пароль'
+
+];

@@ -1,25 +1,25 @@
 <?php
 
 $i18n = [
-	'MAITENANCETITLE' 				=> 'Opties onderhoudsmodus',
+	'MAITENANCETITLE' 				=> 'Onderhoudsmodusopties',
 	'MAINTENANCE_ON' 				=> 'Onderhoudsmodus aan?',
 	'CONTENT_MAINTENANCE_MODE' 		=> 'Inhoud onderhoudsmodus:',
-	'TURNONBOOTSTRAPGRID' 			=> 'Bootstrap-Grid 4.0 inschakelen?',
+	'TURNONBOOTSTRAPGRID'			=> 'Bootstrap-Grid 4.0 inschakelen?',
 	'TURNONBOOTSTRAPGRIDONTHEME' 	=> 'Bootstrap-Grid CSS toevoegen aan front-end thema?',
 	'YES' 							=> 'Ja',
 	'NO' 							=> 'Nee',
 	'SAVEOPTION' 					=> 'Wijzigingen opslaan',
 	'SUPPORT' 						=> 'Als je mijn werk wilt steunen via PayPal :) Bedankt! ',
 	'UPLOADFILE' 					=> 'Bestand uploaden',
-	'ANOTHERPAGE' 					=> '<strong>Wijzigingen opgeslagen!</strong> Ga naar een andere pagina:)',
-	'EDITCOMPONENTS' 				=> 'Bewerk componenten',
+	'ANOTHERPAGE' 					=> '<strong>Wijzigingen opgeslagen!</strong> Ga naar een andere pagina :)',
+	'EDITCOMPONENTS' 				=> 'Componenten bewerken',
 	'MASSIVEADMINSETTINGSTITLE' 	=> 'MassiveAdmin-instellingen',
 	'DROPFILES' 					=> 'Zet bestanden hier neer om te uploaden',
-	'BOOTSTRAPTITLE' 				=> 'Bootstrap-rasteropties',
+	'BOOTSTRAPTITLE' 				=> 'Bootstrap-Grid-opties',
 
 	//options on file edit
 	'COPYFILE' 						=> 'Bestand kopiëren',
-	'RENAMEFILE' 					=> 'Hernoemen / Dir wijzigen',
+	'RENAMEFILE' 					=> 'Hernoem/Wijzig map',
 	'DOWNLOADFILE' 					=> 'Downloaden',
 	'INFOCOPY' 						=> 'Uw gekopieerde bestand bevindt zich in ',
 	'INFOERROR' 					=> 'Er bestaat al een bestand met deze naam in deze map ',
@@ -29,22 +29,22 @@ $i18n = [
 	'CREATENEWUSER' 				=> 'Nieuwe gebruiker aanmaken',
 	'USERNAMECREATE' 				=> 'Gebruikersnaam:',
 	'PASSWORDCREATE' 				=> 'Wachtwoord:',
-	'EMAILCREATE' 					=> 'E-mail nieuwe gebruiker:',
+	'EMAILCREATE' 					=> 'E-mailadres nieuwe gebruiker:',
 	'LANGCREATE' 					=> 'Gebruikerstaal:',
 
 	//options hidden section
-	'HIDEMENUTITLE' 				=> 'Gebruikersbeheer & Secties',
+	'HIDEMENUTITLE' 				=> 'Gebruikersbeheer en secties',
 	'SHOW' 							=> 'Toon',
 	'HIDE' 							=> 'Verbergen',
 	'HIDSECTIONTITLE' 				=> 'Welke secties wil je verbergen?',
-	'HIDEPAGES' 					=> 'Verberg "<strong><i class="uil uil-desktop"></i> Pagina\'s</strong>" sectie?',
-	'HIDEFILES' 					=> 'Verberg "<strong><i class="uil uil-file"></i> Bestanden</strong>" sectie?',
-	'HIDETHEMES' 					=> 'Verberg "<strong><i class="uil uil-paint-tool"></i> Thema\'s</strong>" sectie?',
-	'HIDEBACKUP' 					=> 'Verberg "<strong><i class="uil uil-save"></i> Back-up</strong>" sectie?',
-	'HIDEPLUGIN' 					=> 'Verberg "<strong><i class="uil uil-plug"></i> Plug-in</strong>" sectie?',
-	'HIDESUPPORT' 					=> 'Verberg "<strong><i class="uil uil-life-ring"></i> Support</strong>" sectie?',
-	'HIDESETTINGS' 					=> 'Verberg "<strong><i class="uil uil-setting"></i> MassiveAdmin-instellingen</strong>"-sectie?',
-	'HIDEI18NGALLERY' 				=> 'Verberg "<strong><i class="uil uil-images"></i> i18n galerij</strong>" sectie? (indien aanwezig)',
+	'HIDEPAGES' 					=> 'sectie "<strong>Pagina\'s</strong>" verbergen?',
+	'HIDEFILES' 					=> 'De sectie "<strong>Bestanden</strong>" verbergen?',
+	'HIDETHEMES' 					=> 'De sectie "<strong>Thema\'s</strong>" verbergen?',
+	'HIDEBACKUP' 					=> 'De sectie "<strong>Back-up</strong>" verbergen?',
+	'HIDEPLUGIN' 					=> 'De sectie "<strong>Plug-in</strong>" verbergen?',
+	'HIDESUPPORT' 					=> 'De sectie "<strong>Ondersteuning</strong>" verbergen?',
+	'HIDESETTINGS' 					=> 'De sectie "<strong>MassiveAdmin-instellingen</strong>" verbergen?',
+	'HIDEI18NGALLERY' 				=> 'De sectie "<strong>i18n gallery</strong>" verbergen? (indien bestaat)',
 	'HIDEUSERS' 					=> 'Verberg secties voor de volgende gebruikers:',
 
 	//user manager
@@ -53,80 +53,83 @@ $i18n = [
 	//user help settings
 	'USERHELPTITLE' 				=> 'Hulpinstellingen voor gebruikers',
 	'TURNON' 						=> 'Aanzetten?',
-	'HELP' 							=> 'Helpen',
+	'HELP' 							=> 'Hulp',
 	'USERHELP' 						=> 'Gebruikershulp',
 
 	//menu external
-	'MENUEXTERNAL' 					=> 'Beheer van aangepaste menukoppelingen',
-	'LINKNAME' 						=> 'Linknaam:',
-	'LINKURL' 						=> 'Link-URL:',
-	'LINKICON' 						=> 'Koppelingspictogram',
-	'NEWWINDOW' 					=> 'Link openen in nieuw venster?',
-	'MOREICONS' 					=> '(Vind hier meer iconen.):',
-	'ADDLINK' 						=> 'Nieuwe link toevoegen',
+	'MENUEXTERNAL' 					=> 'Aangepast menu linkbeheer',
+	'LINKNAME'	 					=> 'Linknaam:',
+	'LINKURL' 	 					=> 'Link-URL:',
+	'LINKICON' 	 					=> 'Linkicoon',
+	'NEWWINDOW' 	 				=> 'Link in nieuw venster openen?',
+	'MOREICONS' 	 				=> '(Vind hier meer iconen):',
+	'ADDLINK' 	 					=> 'Nieuwe link toevoegen',
 
 	//own footer option
-	'OWNFOOTERTITLE' 				=> 'White Label-opties',
-	'OWNFOOTERNAME' 				=> 'Aangepaste voettekstnaam:',
-	'OWNFOOTERICON' 				=> 'Aangepast voettekstpictogram (max. 256px hoogte | .jpg, .jpeg, .png, .gif)',
-	'OWNLOGO' 						=> 'Aangepast logo op inlogpagina?',
-	'OWNFOOTERLINK' 				=> 'Aangepaste voettekstlink:',
-	'OWNFOOTERHEADER' 				=> 'Aangepaste header CSS/scripts:',
-	'OWNFOOTERFOOTER' 				=> 'Aangepaste voettekstscripts:',
+	'OWNFOOTERTITLE' 	 			=> 'White Label-opties',
+	'OWNFOOTERNAME' 	 			=> 'Aangepaste voettekstnaam:',
+	'OWNFOOTERICON' 	 			=> 'Aangepast voettekstpictogram (max. 256px hoogte | .jpg, .jpeg, .png, .gif)',
+	'OWNLOGO' 	 					=> 'Aangepast logo op inlogpagina?',
+	'OWNFOOTERLINK' 	 			=> 'Aangepaste voettekstlink:',
+	'OWNFOOTERHEADER' 	 			=> 'Aangepaste header CSS/scripts:',
+	'OWNFOOTERFOOTER' 	 			=> 'Aangepaste voettekstscripts:',
 
 	//owncolor
-	'CHANGETITLECOLOR' 				=> 'CMS-kleuren wijzigen',
-	'MAINCOLOR' 					=> 'Hoofdkleur:',
-	'BGCOLOR' 						=> 'Achtergrondkleur:',
-	'CHANGENAME' 					=> 'wijzig de bijnaam in iets anders dan de bijnaam van de beheerder',
+	'CHANGETITLECOLOR' 	 			=> 'CMS-kleuren wijzigen',
+	'MAINCOLOR' 	 				=> 'Hoofdkleur:',
+	'BGCOLOR' 	 					=> 'Achtergrondkleur:',
+	'CHANGENAME' 	 				=> 'wijzig de bijnaam in iets anders dan de bijnaam van de beheerder',
 
 	//snippet
-	'SNIPPET' 						=> 'Fragmenten',
-	'ADDSNIPPET' 					=> 'Voeg fragment toe',
-	'EDITSNIPPET' 					=> 'Bewerk Fragmenten',
-	'TITLESNIPPET' 					=> 'Titel (zonder spaties)',
-	'SUBMITSNIPPET' 				=> 'Snippets opslaan',
+	'SNIPPET' 	 					=> 'Fragmenten',
+	'ADDSNIPPET' 	 				=> 'Fragment toevoegen',
+	'EDITSNIPPET' 	 				=> 'Fragmenten bewerken',
+	'TITLESNIPPET' 	 				=> 'Titel (zonder spaties)',
+	'SUBMITSNIPPET' 	 			=> 'Fragmenten opslaan',
 
 	//migrate
-	'MIGRATETITLE' 					=> 'Sitemigratie & SSL',
-	'MIGRATEDOMAIN' 				=> 'Domeinmigratie',
-	'OLDDOMAIN' 					=> 'Oud website-adres',
-	'NEWDOMAIN' 					=> 'Nieuw websiteadres',
-	'REPLACEDOMAIN' 				=> 'URL vervangen',
-	'FORCESSL' 						=> 'SSL afdwingen',
-	'TURNONSSL' 					=> 'SSL in URL forceren?',
-	'SAVESSL' 						=> 'SSL-instellingen opslaan',
+	'MIGRATETITLE' 	 				=> 'Sitemigratie en SSL',
+	'MIGRATEDOMAIN' 	 			=> 'Domeinmigratie',
+	'OLDDOMAIN' 	 				=> 'Oud websiteadres',
+	'NEWDOMAIN' 	 				=> 'Nieuw websiteadres',
+	'REPLACEDOMAIN' 	 			=> 'URL vervangen',
+	'FORCESSL' 	 					=> 'SSL forceren',
+	'TURNONSSL' 	 				=> 'SSL forceren in URL?',
+	'SAVESSL' 	 					=> 'SSL-instellingen opslaan',
 
 	//plugin downloader
-	'PLUGINDOWNLOADER' 				=> 'CE-plug-ins downloaden',
-	'DOWNLOADERBASED' 				=> 'Gebaseerd op de Get Simple CMS CE plugin repository.',
-	'SEARCHPLUGIN' 					=> 'Plugins zoeken...',
-	'DOWNLOAD' 						=> 'Downloaden',
+	'PLUGINDOWNLOADER' 	 			=> 'CE-plug-ins downloaden',
+	'DOWNLOADERBASED' 	 			=> 'Gebaseerd op de Get Simple CMS CE plug-in repository.',
+	'SEARCHPLUGIN' 	 				=> 'Zoekplug-ins...',
+	'DOWNLOAD' 	 					=> 'Downloaden',
 
 	//login options
-	'LOGINOPTIONS' 					=> 'Inlogopties',
-	'TURNONSHOWPASSWORDTITLE' 		=> 'Toon wachtwoord knop',
-	'SHOWPASSWORDQUESTION' 			=> 'De knop "Toon wachtwoord" inschakelen bij het inloggen?',
+	'LOGINOPTIONS' 	 				=> 'Inlogopties',
+	'TURNONSHOWPASSWORDTITLE' 		=> 'Knop "Wachtwoord weergeven"',
+	'SHOWPASSWORDQUESTION' 			=> 'De knop "Wachtwoord weergeven" inschakelen bij het inloggen?',
 	'REMOVEFORGETPASSWORDTITLE' 	=> 'Verwijder "Wachtwoord vergeten?"',
-	'SAVESETTINGS' 					=> 'Instellingen opslaan',
+	'SAVESETTINGS' 	 				=> 'Instellingen opslaan',
 
 	//GSCONFIG
-	'GSCONFIGTITLE' 				=> 'GSCONFIG-instellingen bewerken',
-	'GSCONFIGSAVE' 					=> 'Sla de GSCONFIG-instellingen op',
+	'GSCONFIGTITLE' 	 			=> 'Wijzig GSCONFIG-instellingen',
+	'GSCONFIGSAVE' 	 				=> 'Bewaar de GSCONFIG-instellingen',
 
-	'UNISTALLER' 					=> 'Plugins verwijderen',
-	'UNISTALLQUESTION' 				=> 'Je wilt verwijderen',
+	'UNISTALLER' 	 				=> 'Plugins verwijderen',
+	'UNISTALLQUESTION' 	 			=> 'Je wilt de installatie ongedaan maken',
 
 	//mToper
-	"TAB_PAGES" 					=> 'Pagina\'s',
-	"TAB_FILES" 					=> 'Bestanden',
-	"TAB_THEME" 					=> 'Thema',
-	"TAB_BACKUPS" 					=> 'Back-ups',
-	"PLUGINS_NAV" 					=> 'Plug-ins',
-	"TAB_SETTINGS" 					=> 'Instellingen',
-	"TAB_LOGOUT" 					=> 'Uitloggen',
+	"TAB_PAGES" 	 				=> 'Pagina\'s',
+	"TAB_FILES" 	 				=> 'Bestanden',
+	"TAB_THEME" 	 				=> 'Thema',
+	"TAB_BACKUPS" 	 				=> 'Back-ups',
+	"PLUGINS_NAV" 	 				=> 'Plug-ins',
+	"TAB_SETTINGS" 	 				=> 'Instellingen',
+	"TAB_LOGOUT" 	 				=> 'Uitloggen',
 
-
+	//makeFileInTheme
+	"CREATENEWFILE" 	 			=> 'Nieuw bestand maken',
+	"FILECREATED" 	 				=> 'Bestand aangemaakt!',
+ 
 	//frontend settings
 
 
@@ -134,17 +137,32 @@ $i18n = [
 
 	//admin settings
 
-	'FRONTENDTITLE' 				=> 'Frontend-instellingen',
-	'TURNONMTOPER' 					=> 'Frontend-balk aanzetten?',
-	'STYLEINFO' 					=> 'Stijl voor zijbalk FrontEnd',
-	'ADMINTHEMESELECTOR' 			=> 'Admin Thema Selector',
+	'FRONTENDTITLE' 	 			=> 'Frontend-instellingen',
+	'TURNONMTOPER' 	 				=> 'Frontendbalk aanzetten?',
+	'STYLEINFO' 	 				=> 'Stijl voor FrontEnd zijbalk',
+	'ADMINTHEMESELECTOR' 	 		=> 'Beheerderthemakiezer',
 
 	//manage users
 
-	'EMAIL' 						=> 'e-mail:',
-	'PASSWORD' 						=> 'Wachtwoord:',
-	'LANG' 							=> 'Taal:',
-	'CHANGEPLACEHOLDER' 			=> 'wijzig alleen als je wilt wijzigen'
+	'EMAIL' 	 					=> 'e-mail:',
+	'PASSWORD' 	 					=> 'Wachtwoord:',
+	'LANG' 	 						=> 'Taal:',
+	'CHANGEPLACEHOLDER' 	 		=> 'wijzig alleen als je wilt veranderen',
 
 
-];;
+	//new on 5.0
+
+	'FILECREATED' 					=> 'Bestand aangemaakt!',
+	'WATCHEXAMPLE' 					=> 'Bekijk voorbeeldstructuur',
+	'HOWUSETHEMECONFIG' 			=> 'Als je instellingen voor je sjabloon wilt gebruiken, maak dan <code style="color:blue;">settings.json</code> aan in de map van de sjabloon die je gebruikt en pas de juiste structuur toe zoals in het voorbeeld. Pas vervolgens de <b style="color:green;">mats("fieldname")</b> of <b style="color:green;">r_mats("fieldname")</b> toe voor de retourfunctie naar de juiste velden.',
+	'HOWCREATETITLE' 				=> 'Hoe maak je je eigen instellingen aan?',
+	'TUTORIALHOWCREATESETTINGS' 	=> 'Maak uw <code style="color:blue;">settings.json</code> in de hoofdmap van uw themamap, met een structuur gebaseerd op dit voorbeeld met verschillende soorten opties',
+	'THEMECONFIGURATORNAME' 		=> 'Themaconfigurator',
+
+	'BACKUPCREATOR' 				=> 'Back-up maken',
+	'CREATEBACKUP' 					=> 'Back-up maken',
+	'SETTINGS' 						=> 'Instellingen',
+	'NOSETTINGSCREATED' 			=> 'Geen settings.json aangemaakt.',
+	'SHOWPASSWORD' 					=> 'Laat wachtwoord zien'
+
+];

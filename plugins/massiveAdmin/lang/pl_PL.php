@@ -37,14 +37,14 @@ $i18n = [
 	'SHOW'				        	=> 'Pokaż',
 	'HIDE'				        	=> 'Ukryj',
 	'HIDSECTIONTITLE'				=> 'Jakie sekcje chcesz ukryć?',
-	'HIDEPAGES'						=> 'Ukryć sekcje"<strong><i class="uil uil-desktop"></i> Strony</strong>"?',
-	'HIDEFILES'						=> 'Ukryć sekcje "<strong><i class="uil uil-file"></i> Pliki</strong>"?',
-	'HIDETHEMES'					=> 'Ukryć sekcje "<strong><i class="uil uil-paint-tool"></i> Szablony</strong>"?',
-	'HIDEBACKUP'					=> 'Ukryć sekcje "<strong><i class="uil uil-save"></i> Kopia zapasowa</strong>"?',
-	'HIDEPLUGIN'					=> 'Ukryć sekcje "<strong><i class="uil uil-plug"></i> Wtyczki</strong>"?',
-	'HIDESUPPORT'					=> 'Ukryć sekcje "<strong><i class="uil uil-life-ring"></i> Wsparcie</strong>"?',
-	'HIDESETTINGS'					=> 'Ukryć sekcje "<strong><i class="uil uil-setting"></i> Ustawienia MassiveAdmin</strong>"?',
-	'HIDEI18NGALLERY'				=> 'Ukryć sekcje "<strong><i class="uil uil-images"></i> Galeria i18n</strong>"? (jeśli istnieje)',
+	'HIDEPAGES'						=> 'Ukryć sekcje"<strong>Strony</strong>"?',
+	'HIDEFILES'						=> 'Ukryć sekcje "<strong>Pliki</strong>"?',
+	'HIDETHEMES'					=> 'Ukryć sekcje "<strong>Szablony</strong>"?',
+	'HIDEBACKUP'					=> 'Ukryć sekcje "<strong>Kopia zapasowa</strong>"?',
+	'HIDEPLUGIN'					=> 'Ukryć sekcje "<strong>Wtyczki</strong>"?',
+	'HIDESUPPORT'					=> 'Ukryć sekcje "<strong> Wsparcie</strong>"?',
+	'HIDESETTINGS'					=> 'Ukryć sekcje "<strong>Ustawienia MassiveAdmin</strong>"?',
+	'HIDEI18NGALLERY'				=> 'Ukryć sekcje "<strong>Galeria i18n</strong>"? (jeśli istnieje)',
 	'HIDEUSERS'						=> 'Ukryj sekcje dla następujących użytkowników:',
 
 	//user manager
@@ -126,20 +126,43 @@ $i18n = [
 	"TAB_SETTINGS"					=> 'Ustawienia',
 	"TAB_LOGOUT"					=> 'Wyloguj',
 
+	//makeFileInTheme
+	"CREATENEWFILE"					=> 'Utwórz nowy plik',
+	"FILECREATED"					=> 'Plik utworzono!',
+	
+	//frontend settings
+
 
 	//new on 4.0
 
 	//admin settings
 
-	'FRONTENDTITLE' => 'Front End Ustawienia',
-	'TURNONMTOPER' => 'Włączyć bar na frontendzie?',
-	'STYLEINFO' => 'Style dla frontendu',
-	'ADMINTHEMESELECTOR' => 'Wybór tematu dla panelu Administracyjnego',
+	'FRONTENDTITLE' 				=> 'Front End Ustawienia',
+	'TURNONMTOPER' 					=> 'Włączyć bar na frontendzie?',
+	'STYLEINFO' 					=> 'Style dla frontendu',
+	'ADMINTHEMESELECTOR' 			=> 'Wybór tematu dla panelu Administracyjnego',
 
 	//manage users
 
-	'EMAIL' => 'e-mail:',
-	'PASSWORD' => 'Password:',
-	'LANG' => 'Język:',
-	'CHANGEPLACEHOLDER' => 'Zmień tylko jeśli chcesz zmienić'
-];;
+	'EMAIL' 						=> 'e-mail:',
+	'PASSWORD' 						=> 'Password:',
+	'LANG' 							=> 'Język:',
+	'CHANGEPLACEHOLDER' 			=> 'Zmień tylko jeśli chcesz zmienić',
+
+
+	//new on 5.0
+
+	'FILECREATED' 					=> 'Plik został utworzony!',
+	'WATCHEXAMPLE' 					=> 'Wyświetl przykładową strukturę',
+	'HOWUSETHEMECONFIG' 			=> 'Jeśli chcesz użyć ustawień dla swojego szablonu, po prostu utwórz plik <code style="color:blue;">settings.json</code> w folderze szablonu, którego używasz i zastosuj odpowiednią strukturę jak w przykładzie. Następnie zastosuj <b style="color:green;">mats("fieldname")</b> lub <b style="color:green;">r_mats("fieldname")</b> dla funkcji powrotu do odpowiednie pola.',
+	'HOWCREATETITLE' 				=> 'Jak stworzyć własne ustawienia?',
+	'TUTORIALHOWCREATESETTINGS' 	=> 'Utwórz plik <code style="color:blue;">settings.json</code> w katalogu głównym folderu motywu, ze strukturą opartą na tym przykładzie z różnymi typami opcji',
+	'THEMECONFIGURATORNAME' 		=> 'Konfigurator motywu',
+
+	'BACKUPCREATOR' 				=> 'Kreator kopii zapasowych',
+	'CREATEBACKUP' 					=> 'Utwórz kopię zapasową',
+	'SETTINGS' 						=> 'Ustawienia',
+	'NOSETTINGSCREATED' 			=> 'Nie utworzono pliku Settings.json.',
+	'SHOWPASSWORD' 					=> 'Pokaż hasło'
+
+];

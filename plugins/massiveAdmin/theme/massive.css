@@ -1,10 +1,29 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap");
-@import url("https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css");
+
 
 :root {
+	--ggs: 1;
 	--main-color: #00162a;
+	--main-color-d: #000b14;
 	--secondary-color: #f4f5f6;
-	--third-color:#fff;
+	--third-color: #fff;
+}
+
+.wrapper .nav li a:hover em,#sidebar .snav li a:hover em {
+	border-bottom: none !important;
+}
+
+
+.primarylink img{
+	display: none;
+}
+
+.wrapper .nav li a i {
+	transform: scale(1);
+	transition: all 250ms linear;
+}
+
+.wrapper .nav li a:hover i {
+	transform: scale(1.1);
 }
 
 *,
@@ -15,7 +34,7 @@
 
 body {
 	background: var(--secondary-color);
-	font-family: "Lato", sans-serif;
+	font-family: system-ui, sans-serif;
 	font-size: 0.9rem;
 }
 
@@ -25,7 +44,7 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: "Lato", sans-serif;
+	font-family: system-ui, sans-serif;
 	color: var(--main-color);
 	font-style: unset;
 }
@@ -73,6 +92,19 @@ h6 {
 	width: auto;
 	justify-content: flex-end;
 }
+
+
+@media(min-width:768px) {
+	#header .nav {
+		margin-bottom: -2px;
+	}
+
+	#header .nav a {
+
+		padding: 10px 15px;
+	}
+}
+
 
 @media (max-width: 768px) {
 	#header .toper .wrapper #pill {
@@ -204,6 +236,11 @@ h6 {
 	border-right: solid var(--main-color) 2px;
 	transition: all 250ms linear;
 	border-radius: 5px;
+}
+
+
+#sidebar .snav li a.current svg {
+	filter: invert(100%) !important
 }
 
 #sidebar .snav li a.current:hover {
@@ -570,6 +607,13 @@ tr .linker {
 #header .nav {
 	display: flex;
 	align-items: center;
+	color: red;
+}
+
+#header .nav a {
+	display: flex;
+	align-content: center;
+	align-items: center;
 }
 
 @media (max-width: 768px) {
@@ -666,7 +710,9 @@ tr .linker {
 body#index,
 body#resetpassword {
 	background-color: var(--main-color);
-	background-image: url("https://picsum.photos/1600/900/?blur");
+	/*background-image: url("https://picsum.photos/1600/900/?blur");*/
+
+	background:linear-gradient(to bottom, var(--main-color), var(--main-color-d));
 	background-size: cover;
 	background-position: center center;
 }
@@ -937,14 +983,42 @@ body#resetpassword #maincontent .main {
 	overflow: hidden;
 }
 
-#footer{
-	text-shadow:none ;
+#footer {
+	text-shadow: none;
 }
 
-.copybutton { display: inline-block; position: relative; vertical-align: middle; }
-.copybutton img { transition: transform 0.3s; width:22px; }
-.copybutton:hover img { transform: scale(1.2); }
-.copybutton:active img { transform: scale(0.8); }
-.shortcode{font-size:small; background-color:#f1f1f1; padding:3px 5px; border:1px solid #B2B2B2; margin-right:5px; border-radius: 5px;}
-.tpl{color:royalblue !important;}
-.cke{color:hotpink !important;}
+.copybutton {
+	display: inline-block;
+	position: relative;
+	vertical-align: middle;
+}
+
+.copybutton img {
+	transition: transform 0.3s;
+	width: 22px;
+}
+
+.copybutton:hover img {
+	transform: scale(1.2);
+}
+
+.copybutton:active img {
+	transform: scale(0.8);
+}
+
+.shortcode {
+	font-size: small;
+	background-color: #f1f1f1;
+	padding: 3px 5px;
+	border: 1px solid #B2B2B2;
+	margin-right: 5px;
+	border-radius: 5px;
+}
+
+.tpl {
+	color: royalblue !important;
+}
+
+.cke {
+	color: hotpink !important;
+}

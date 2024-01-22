@@ -1,10 +1,13 @@
-<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/codemirror.min.js" integrity="sha512-8RnEqURPUc5aqFEN04aQEiPlSAdE0jlFS/9iGgUyNtwFnSKCXhmB6ZTNl7LnDtDWKabJIASzXrzD0K+LYexU9g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/codemirror.min.css" integrity="sha512-uf06llspW44/LZpHzHT6qBOIVODjWtv4MxCricRxkzvopAlSWnTf6hpZTFxuuZcuNE9CBQhqE0Seu1CoRk84nQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/theme/rubyblue.min.css" integrity="sha512-pt+OhZW7o2pmHEahNFroPWkGR89L0tmDqCzXK+7WM1vGLtUyxms1JxZsXgJbOdFwylRnEt0yHnU6y2uAs40FxQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/mode/clike/clike.min.js" integrity="sha512-l8ZIWnQ3XHPRG3MQ8+hT1OffRSTrFwrph1j1oc1Fzc9UKVGef5XN9fdO0vm3nW0PRgQ9LJgck6ciG59m69rvfg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<?php global $SITEURL;?>
+
+<script src="<?php echo $SITEURL; ?>plugins/massiveAdmin/js/codemirror.min.js"></script>
+<link rel="stylesheet" href="<?php echo $SITEURL; ?>plugins/massiveAdmin/css/codemirror.min.css" />
+<link rel="stylesheet" href="<?php echo $SITEURL; ?>plugins/massiveAdmin/css/rubyblue.min.css" />
+<script src="<?php echo $SITEURL; ?>plugins/massiveAdmin/js/clike.min.js"></script>
 
 <style type="text/css">
-	.CodeMirror{
+	.CodeMirror {
 		font-size: 15px;
 		width: 100%, ;
 		height: 500px;
@@ -25,8 +28,8 @@
 			indentWithTabs: true,
 			enterMode: "keep",
 			tabMode: "shift",
-			mode:'clike',
-			inlineDynamicImports:true
+			mode: 'clike',
+			inlineDynamicImports: true
 		});
 	</script>
 
@@ -35,10 +38,9 @@
 </form>
 
 <?php
-	if (isset($_POST['editGSConfig'])) {
-		global $MA;
-		$MA->gsConfigEdit();
-		echo '<div class="doneMassive" style="background:green;width:100%;text-align:center;padding:10px;border-radius:3px;color:#fff;">Done</div>';
-		echo ("<meta http-equiv='refresh' content='1'>");
-	};
-; ?>
+if (isset($_POST['editGSConfig'])) {
+	global $MA;
+	$MA->gsConfigEdit();
+	echo '<div class="doneMassive" style="background:green;width:100%;text-align:center;padding:10px;border-radius:3px;color:#fff;">Done</div>';
+	echo ("<meta http-equiv='refresh' content='1'>");
+};; ?>

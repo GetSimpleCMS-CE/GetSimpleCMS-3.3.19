@@ -1,6 +1,6 @@
 <style>
 	@import url("<?php global $SITEURL;
-	echo $SITEURL . 'plugins/massiveAdmin/css/downloader.css'; ?>");
+					echo $SITEURL . 'plugins/massiveAdmin/css/downloader.css'; ?>");
 </style>
 
 <h3 style="margin-bottom:0;">Plugin Downloader</h3>
@@ -38,7 +38,7 @@ echo '</ul>'; ?>
 if (isset($_POST['download'])) {
 	global $MA;
 	$MA->downloadPlugin();
-}; 
+};
 ?>
 
 <script>

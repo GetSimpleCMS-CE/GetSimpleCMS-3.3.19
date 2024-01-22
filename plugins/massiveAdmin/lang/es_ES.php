@@ -37,14 +37,14 @@ $i18n = [
 	'SHOW'				 			=> 'Mostar',
 	'HIDE'				 			=> 'Ocultar',
 	'HIDSECTIONTITLE'	 			=> '¿Cual Secciones Quieres Ocultar?',
-	'HIDEPAGES'		 				=> '¿Ocultar sección de "<strong><i class="uil uil-desktop"></i> Páginas</strong>" ?',
-	'HIDEFILES'		 				=> '¿Ocultar sección de "<strong><i class="uil uil-file"></i> Archivos</strong>"?',
-	'HIDETHEMES'		 			=> '¿Ocultar sección de "<strong><i class="uil uil-paint-tool"></i> Temas</strong>"?',
-	'HIDEBACKUP'		 			=> '¿Ocultar sección de "<strong><i class="uil uil-save"></i> Copias de seguridad</strong>"?',
-	'HIDEPLUGIN'		 			=> '¿Ocultar sección de "<strong><i class="uil uil-plug"></i> Extensiones</strong>"?',
-	'HIDESUPPORT'		 			=> '¿Ocultar sección de "<strong><i class="uil uil-life-ring"></i> Suporte</strong>"?',
-	'HIDESETTINGS'		 			=> '¿Ocultar sección de "<strong><i class="uil uil-setting"></i> Ajustes de MassiveAdmin</strong>"?',
-	'HIDEI18NGALLERY'	 			=> '¿Ocultar sección de "<strong><i class="uil uil-images"></i> i18n Gallery</strong>"? (if exists)',
+	'HIDEPAGES'		 				=> '¿Ocultar sección de "<strong>Páginas</strong>" ?',
+	'HIDEFILES'		 				=> '¿Ocultar sección de "<strong>Archivos</strong>"?',
+	'HIDETHEMES'		 			=> '¿Ocultar sección de "<strong>Temas</strong>"?',
+	'HIDEBACKUP'		 			=> '¿Ocultar sección de "<strong>Copias de seguridad</strong>"?',
+	'HIDEPLUGIN'		 			=> '¿Ocultar sección de "<strong>Extensiones</strong>"?',
+	'HIDESUPPORT'		 			=> '¿Ocultar sección de "<strong>Suporte</strong>"?',
+	'HIDESETTINGS'		 			=> '¿Ocultar sección de "<strong>Ajustes de MassiveAdmin</strong>"?',
+	'HIDEI18NGALLERY'	 			=> '¿Ocultar sección de "<strong>i18n Gallery</strong>"? (if exists)',
 	'HIDEUSERS'		 				=> 'Ocultar secciones para los siguientes usuarios:',
 
 	//user manager
@@ -126,22 +126,43 @@ $i18n = [
 	"TAB_SETTINGS"					=> 'Ajustes',
 	"TAB_LOGOUT"					=> 'Cerrar sesión',
 
+	//makeFileInTheme
+	"CREATENEWFILE"					=> 'Crear Nuevo Archivo',
+	"FILECREATED"					=> '¡Archivo Creado!',
+	
+	//frontend settings
+
+
 	//nuevo en 4.0
 
 	//Configuración de administrador
 
-	'FRONTENDTITLE' => 'Configuración de interfaz',
-	'TURNONMTOPER' => '¿Activar barra frontal?',
-	'STYLEINFO' => 'Estilo para la barra lateral FrontEnd',
-	'ADMINTHEMESELECTOR' => 'Selector de temas de administración',
+	'FRONTENDTITLE' 				=> 'Configuración de interfaz',
+	'TURNONMTOPER' 					=> '¿Activar barra frontal?',
+	'STYLEINFO' 					=> 'Estilo para la barra lateral FrontEnd',
+	'ADMINTHEMESELECTOR' 			=> 'Selector de temas de administración',
 
 	// administrar usuarios
 
-	'CORREO ELECTRÓNICO' => 'correo electrónico:',
-	'CONTRASEÑA' => 'Contraseña:',
-	'LANG' => 'Idioma:',
-	'CHANGEPLACEHOLDER' => 'cambiar solo si quieres cambiar'
+	'EMAIL' 						=> 'correo electrónico:',
+	'PASSWORD' 						=> 'Contraseña:',
+	'LANG' 							=> 'Idioma:',
+	'CHANGEPLACEHOLDER' 			=> 'cambiar solo si quieres cambiar',
 
 
+	//new on 5.0
 
-];;
+	'FILECREATED' 					=> '¡Archivo creado!',
+	'WATCHEXAMPLE' 					=> 'Ver estructura de ejemplo',
+	'HOWUSETHEMECONFIG' 			=> 'Si desea utilizar configuraciones para su plantilla, simplemente cree <code style="color:blue;">settings.json</code> en la carpeta de la plantilla que está utilizando y aplique la estructura adecuada. como en el ejemplo. Luego aplique <b style="color:green;">mats("fieldname")</b> o <b style="color:green;">r_mats("fieldname")</b> para la función de retorno a los campos apropiados.',
+	'HOWCREATETITLE' 				=> '¿Cómo crear tus propias configuraciones?',
+	'TUTORIALHOWCREATESETTINGS' 	=> 'Crea tu <code style="color:blue;">settings.json</code> en la raíz de tu carpeta de temas, con una estructura basada en este ejemplo con diferentes tipos de opciones',
+	'THEMECONFIGURATORNAME' 		=> 'Configurador de temas',
+
+	'BACKUPCREATOR' 				=> 'Creador de copias de seguridad',
+	'CREATEBACKUP' 					=> 'Crear copia de seguridad',
+	'SETTINGS' 						=> 'Configuración',
+	'NOSETTINGSCREATED' 			=> 'No se ha creado ningún archivo settings.json.',
+	'SHOWPASSWORD' 					=> 'Mostrar contraseña'
+
+];

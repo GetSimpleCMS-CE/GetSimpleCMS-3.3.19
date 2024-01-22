@@ -101,7 +101,10 @@ class MassiveAdminClass
 
 	public function massiveHead()
 	{
-		echo '<link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.8/css/unicons.css">';
+		global $SITEURL;
+
+
+		echo '<link rel="stylesheet" href="' . $SITEURL . 'plugins/massiveAdmin/css/massiveIcons.css">';
 		echo ' <meta name="viewport" content="width=device-width, initial-scale=1.0">';
 		$massiveOptionFile = GSDATAOTHERPATH . '/massiveadmin/massiveOption.json';
 		$massiveOptionFileContent = @file_get_contents($massiveOptionFile);
@@ -248,7 +251,11 @@ class MassiveAdminClass
 			$usrLangFile = $username->LANG[0];
 
 			echo '
-			<li> <span class="name">' . $usrfile . '</span><form action="" method="POST"><button type="submit" name="' . $newValue . '" class="delete-this" style="background:red;color:#fff;border:none;font-size:1.1rem;border-radius:3px"><i class="uil uil-trash-alt"></i></button></form>
+			<li> <span class="name">' . $usrfile . '</span><form action="" method="POST"><button type="submit" name="' . $newValue . '" class="delete-this" 
+			style="background:red;color:#fff;border:none;font-size:1.1rem;border-radius:3px">
+			
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="trash" style="display:inline-block;width:20px;height:20px;fill:#fff;"><path d="M20,6H16V5a3,3,0,0,0-3-3H11A3,3,0,0,0,8,5V6H4A1,1,0,0,0,4,8H5V19a3,3,0,0,0,3,3h8a3,3,0,0,0,3-3V8h1a1,1,0,0,0,0-2ZM10,5a1,1,0,0,1,1-1h2a1,1,0,0,1,1,1V6H10Zm7,14a1,1,0,0,1-1,1H8a1,1,0,0,1-1-1V8H17Z"></path></svg>
+			</button></form>
 			
 <form method="POST" style="width:100%;border:solid 1px #ddd; padding:10px;margin-top:10px;">
 
@@ -258,7 +265,7 @@ class MassiveAdminClass
 <input type="email" name="email" value="' . $username->EMAIL[0] . '">
 
 <label for="password">' . i18n_r("massiveAdmin/PASSWORD") . '</label>
-<input type="password" name="password" placeholder="'. i18n_r("massiveAdmin/CHANGEPLACEHOLDER").'">
+<input type="password" name="password" placeholder="' . i18n_r("massiveAdmin/CHANGEPLACEHOLDER") . '">
 
 <label for="password">' . i18n_r("massiveAdmin/LANG") . '</label>
 <select style="width:100%;background:#fff;border:solid 1px var(--main-color);padding:10px;" name="lang">
@@ -343,7 +350,6 @@ class MassiveAdminClass
 			$data[$_POST['linkname']] = array();
 			$data[$_POST['linkname']]['name'] = $_POST['linkname'];
 			$data[$_POST['linkname']]['url'] = $_POST['linkurl'];
-			$data[$_POST['linkname']]['icon'] = $_POST['linkicon'];
 			$data[$_POST['linkname']]['linkblank'] = $_POST['linkblank'];
 			$datee = json_encode($data, true);
 
@@ -438,7 +444,8 @@ class MassiveAdminClass
 			echo '
 			<script>
 				window.addEventListener("load", (event) => {
-					document.querySelector(".submit").insertAdjacentHTML("afterend",`<button class="button" style="margin-left:5px;padding:7px;" onclick="event.preventDefault();showPass()"><i class="uil uil-key-skeleton-alt"></i> Show Password</button>`);
+					document.querySelector(".submit").insertAdjacentHTML("afterend",`<button class="button" style="margin-left:5px;padding:7px;" onclick="event.preventDefault();showPass()">
+  Show Password</button>`);
 				});
 
 				function showPass(){
@@ -593,16 +600,19 @@ class MassiveAdminClass
 	// codemirror components
 	public function ComponentsCodeMirror()
 	{
+		global $SITEURL;
+
+
 		echo '
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/codemirror.min.js" integrity="sha512-8RnEqURPUc5aqFEN04aQEiPlSAdE0jlFS/9iGgUyNtwFnSKCXhmB6ZTNl7LnDtDWKabJIASzXrzD0K+LYexU9g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/codemirror.min.css" integrity="sha512-uf06llspW44/LZpHzHT6qBOIVODjWtv4MxCricRxkzvopAlSWnTf6hpZTFxuuZcuNE9CBQhqE0Seu1CoRk84nQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/theme/blackboard.min.css" integrity="sha512-KnHAkH0/78Cyjs1tjV9/+00HK8gu1uKRCCKcWFxX0+rehRh9SYJqiG/2fY4St7H8rPItOsBkgQjN0m4rL5Wobw==" crossorigin="anonymous" referrerpolicy="no-referrer" />		<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/mode/php/php.min.js" integrity="sha512-jZGz5n9AVTuQGhKTL0QzOm6bxxIQjaSbins+vD3OIdI7mtnmYE6h/L+UBGIp/SssLggbkxRzp9XkQNA4AyjFBw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/mode/php/php.min.js" integrity="sha512-jZGz5n9AVTuQGhKTL0QzOm6bxxIQjaSbins+vD3OIdI7mtnmYE6h/L+UBGIp/SssLggbkxRzp9XkQNA4AyjFBw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/mode/css/css.min.js" integrity="sha512-rQImvJlBa8MV1Tl1SXR5zD2bWfmgCEIzTieFegGg89AAt7j/NBEe50M5CqYQJnRwtkjKMmuYgHBqtD1Ubbk5ww==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/mode/javascript/javascript.min.js" integrity="sha512-I6CdJdruzGtvDyvdO4YsiAq+pkWf2efgd1ZUSK2FnM/u2VuRASPC7GowWQrWyjxCZn6CT89s3ddGI+be0Ak9Fg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/mode/xml/xml.min.js" integrity="sha512-LarNmzVokUmcA7aUDtqZ6oTS+YXmUKzpGdm8DxC46A6AHu+PQiYCUlwEGWidjVYMo/QXZMFMIadZtrkfApYp/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/mode/htmlmixed/htmlmixed.min.js" integrity="sha512-HN6cn6mIWeFJFwRN9yetDAMSh+AK9myHF1X9GlSlKmThaat65342Yw8wL7ITuaJnPioG0SYG09gy0qd5+s777w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/mode/clike/clike.min.js" integrity="sha512-l8ZIWnQ3XHPRG3MQ8+hT1OffRSTrFwrph1j1oc1Fzc9UKVGef5XN9fdO0vm3nW0PRgQ9LJgck6ciG59m69rvfg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+		<script src="' . $SITEURL . 'plugins/massiveAdmin/js/codemirror.min.js" integrity="sha512-8RnEqURPUc5aqFEN04aQEiPlSAdE0jlFS/9iGgUyNtwFnSKCXhmB6ZTNl7LnDtDWKabJIASzXrzD0K+LYexU9g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+		<link rel="stylesheet" href="' . $SITEURL . 'plugins/massiveAdmin/css/codemirror.min.css" integrity="sha512-uf06llspW44/LZpHzHT6qBOIVODjWtv4MxCricRxkzvopAlSWnTf6hpZTFxuuZcuNE9CBQhqE0Seu1CoRk84nQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+		<link rel="stylesheet" href="' . $SITEURL . 'plugins/massiveAdmin/css/blackboard.min.css" integrity="sha512-KnHAkH0/78Cyjs1tjV9/+00HK8gu1uKRCCKcWFxX0+rehRh9SYJqiG/2fY4St7H8rPItOsBkgQjN0m4rL5Wobw==" crossorigin="anonymous" referrerpolicy="no-referrer" />	
+ 		<script src="' . $SITEURL . 'plugins/massiveAdmin/js/php.min.js" integrity="sha512-jZGz5n9AVTuQGhKTL0QzOm6bxxIQjaSbins+vD3OIdI7mtnmYE6h/L+UBGIp/SssLggbkxRzp9XkQNA4AyjFBw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+		<script src="' . $SITEURL . 'plugins/massiveAdmin/js/css.min.js" integrity="sha512-rQImvJlBa8MV1Tl1SXR5zD2bWfmgCEIzTieFegGg89AAt7j/NBEe50M5CqYQJnRwtkjKMmuYgHBqtD1Ubbk5ww==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+		<script src="' . $SITEURL . 'plugins/massiveAdmin/js/javascript.min.js" integrity="sha512-I6CdJdruzGtvDyvdO4YsiAq+pkWf2efgd1ZUSK2FnM/u2VuRASPC7GowWQrWyjxCZn6CT89s3ddGI+be0Ak9Fg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+		<script src="' . $SITEURL . 'plugins/massiveAdmin/js/xml.min.js" integrity="sha512-LarNmzVokUmcA7aUDtqZ6oTS+YXmUKzpGdm8DxC46A6AHu+PQiYCUlwEGWidjVYMo/QXZMFMIadZtrkfApYp/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+		<script src="' . $SITEURL . 'plugins/massiveAdmin/js/htmlmixed.min.js" integrity="sha512-HN6cn6mIWeFJFwRN9yetDAMSh+AK9myHF1X9GlSlKmThaat65342Yw8wL7ITuaJnPioG0SYG09gy0qd5+s777w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+		<script src="' . $SITEURL . 'plugins/massiveAdmin/js/clike.min.js" integrity="sha512-l8ZIWnQ3XHPRG3MQ8+hT1OffRSTrFwrph1j1oc1Fzc9UKVGef5XN9fdO0vm3nW0PRgQ9LJgck6ciG59m69rvfg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 		<style type="text/css">
 			.CodeMirror {
@@ -656,6 +666,71 @@ class MassiveAdminClass
 		file_put_contents($mtoperSettingPath . 'turnon.txt', $_POST['turnon']);
 		file_put_contents($mtoperSettingPath . 'style.txt', $_POST['style']);
 
+		echo ("<meta http-equiv='refresh' content='0'>");
+	}
+
+
+	public function createBackupZip()
+	{
+
+		$folderPath = $_POST['folder'];
+		$foldername = '';
+
+		if ($folderPath == GSDATAUPLOADPATH) {
+			$foldername = 'upload';
+		} elseif ($folderPath == GSPLUGINPATH) {
+			$foldername = 'plugins';
+		} elseif ($folderPath == GSDATAPATH) {
+			$foldername = 'data';
+		} elseif ($folderPath == GSTHEMESPATH) {
+			$foldername = 'themes';
+		} elseif ($folderPath == GSADMINPATH) {
+			$foldername = 'admin';
+		};
+
+
+
+
+		// Specify the name for the zip file
+		$dateString = date('Y-m-d-Hi_s');
+
+		if (!file_exists(GSBACKUPSPATH . 'backupCreator/')) {
+			mkdir(GSBACKUPSPATH . 'backupCreator/', 0755);
+		};
+
+		$zipFileName = GSBACKUPSPATH . 'backupCreator/' . $dateString . '-' . $foldername . '.zip';
+
+		// Create a ZipArchive object
+		$zip = new ZipArchive();
+
+		// Open the zip file for writing
+		if ($zip->open($zipFileName, ZipArchive::CREATE) === TRUE) {
+
+			// Add all files and folders from the specified folder
+			$files = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($folderPath), RecursiveIteratorIterator::SELF_FIRST);
+
+			foreach ($files as $file) {
+				// Exclude "." and ".." folders
+				if ($file->isDir() && !in_array($file->getBasename(), ['.', '..'])) {
+					$zip->addEmptyDir(str_replace($folderPath . '/', '', $file . '/'));
+				} elseif ($file->isFile()) {
+					$zip->addFile($file, str_replace($folderPath . '/', '', $file));
+				}
+			}
+
+			// Close the zip file
+			$zip->close();
+		};
+
+		echo ("<meta http-equiv='refresh' content='0'>");
+	}
+
+
+	public function deleteBackupZip()
+	{
+		global $SITEURL;
+		global $GSADMIN;
+		unlink($_POST['delbackup']);
 		echo ("<meta http-equiv='refresh' content='0'>");
 	}
 };
