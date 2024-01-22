@@ -158,7 +158,11 @@
 			<input type="text" name="rename-massive">
 			<input type="submit" name="save-rename-massive" class="submit" value="<?php echo i18n_r("massiveAdmin/RENAMEFILE"); ?>">
 			<input type="submit" name="copy-rename-massive" class="submit" value="<?php echo i18n_r("massiveAdmin/COPYFILE"); ?>">
-			<button class="close-rename-fog"><i class="uil uil-times"></i></button>
+			<button class="close-rename-fog">
+			
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="times"><path fill="#fff" d="M13.41,12l4.3-4.29a1,1,0,1,0-1.42-1.42L12,10.59,7.71,6.29A1,1,0,0,0,6.29,7.71L10.59,12l-4.3,4.29a1,1,0,0,0,0,1.42,1,1,0,0,0,1.42,0L12,13.41l4.29,4.3a1,1,0,0,0,1.42,0,1,1,0,0,0,0-1.42Z"></path></svg>	
+
+			</button>
 		</form>
 	</div>
 </div>
@@ -224,7 +228,10 @@
 		if (document.querySelector('.All.folder') !== null) {
 			document.querySelectorAll('.All.folder').forEach(e => {
 				const linker = e.querySelector('a').getAttribute('href');
-				e.querySelector('img').insertAdjacentHTML('beforebegin', '<a href="' + linker + '" class="massive-folder-linker"><i class="uil uil-folder-open"></i></a>');
+				e.querySelector('img').insertAdjacentHTML('beforebegin', `<a href="' + linker + '" class="massive-folder-linker">
+				
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="folder" style="display:inline-block;width:50px;"><path fill="#fff" d="M19,5.5H12.72l-.32-1a3,3,0,0,0-2.84-2H5a3,3,0,0,0-3,3v13a3,3,0,0,0,3,3H19a3,3,0,0,0,3-3V8.5A3,3,0,0,0,19,5.5Zm1,13a1,1,0,0,1-1,1H5a1,1,0,0,1-1-1V5.5a1,1,0,0,1,1-1H9.56a1,1,0,0,1,.95.68l.54,1.64A1,1,0,0,0,12,7.5h7a1,1,0,0,1,1,1Z"></path></svg>
+				</a>`);
 
 				e.querySelector('img').remove();
 				e.querySelector('.imgthumb').remove();
@@ -269,7 +276,12 @@
 <script>
 	document.querySelectorAll('.imgthumb').forEach(x => {
 		if (x.innerHTML == '') {
-			x.innerHTML = `<div class="massive-folder-linker"><i class="uil uil-file" style="font-size: 4rem; display: block; margin-bottom: 15px;"></i></div>`;
+			x.innerHTML = `<div class="massive-folder-linker">
+			
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="file" style="display:inline-block;width:50px;"><path fill="#6563FF" d="M20,8.94a1.31,1.31,0,0,0-.06-.27l0-.09a1.07,1.07,0,0,0-.19-.28h0l-6-6h0a1.07,1.07,0,0,0-.28-.19l-.09,0L13.06,2H7A3,3,0,0,0,4,5V19a3,3,0,0,0,3,3H17a3,3,0,0,0,3-3V9S20,9,20,8.94ZM14,5.41,16.59,8H14ZM18,19a1,1,0,0,1-1,1H7a1,1,0,0,1-1-1V5A1,1,0,0,1,7,4h5V9a1,1,0,0,0,1,1h5Z"></path></svg>
+			
+			
+			</div>`;
 		}
 	});
 

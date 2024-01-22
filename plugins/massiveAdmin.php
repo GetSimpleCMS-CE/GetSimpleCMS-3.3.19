@@ -10,6 +10,10 @@ if (isset($_GET['snippet'])) {
 	$sett = 'pages';
 } elseif (isset($_GET['downloader']) || isset($_GET['unistaller'])) {
 	$sett = 'plugins';
+} elseif (isset($_GET['backupcreator'])) {
+	$sett = 'backups';
+} elseif (isset($_GET['themesettings'])) {
+	$sett = 'theme';
 } else {
 	$sett = 'settings';
 }
@@ -18,7 +22,7 @@ if (isset($_GET['snippet'])) {
 register_plugin(
 	$thisfile, //Plugin id
 	'Massive Admin Theme', 	//Plugin name
-	'4.1', 		//Plugin version
+	'5.0', 		//Plugin version
 	'Multicolor',  //Plugin author
 	'https://multicolor.stargard.pl', //author website
 	'Admin theme with new function', //Plugin description
@@ -32,6 +36,8 @@ global $SITEURL;
 require(GSPLUGINPATH . 'massiveAdmin/class/massiveAdmin.class.php');
 
 $MA = new MassiveAdminClass();
+
+ 
 
 # new option on file browser
 add_action('file-extras', 'newOptionsMassive');
@@ -72,9 +78,15 @@ function compomassive()
 $folder = GSDATAOTHERPATH . '/massiveadmin/';
 
 #themeSelector 
-$themeChecker = @file_get_contents(GSDATAOTHERPATH . 'massiveTheme/option.txt') ?? 'massive';
 
-register_style('masivestyle', $SITEURL . 'plugins/massiveAdmin/theme/' . $themeChecker . '.css', '2.0', 'screen');
+if (file_exists(GSDATAOTHERPATH . 'massiveTheme/option.txt')) {
+	$themeChecker = file_get_contents(GSDATAOTHERPATH . 'massiveTheme/option.txt');
+} else {
+	$themeChecker = 'massive';
+}
+
+
+register_style('masivestyle', $SITEURL . 'plugins/massiveAdmin/theme/' . $themeChecker  . '.css', '5.0', 'screen');
 queue_style('masivestyle', GSBACK);
 
 add_action('footer', 'ckeStyleImplementation');
@@ -143,18 +155,22 @@ if (isset($_COOKIE['GS_ADMIN_USERNAME'])) {
 			global $SITEURL;
 			$mtoperSettingPath = GSDATAOTHERPATH . 'massiveToperSettings/';
 
-			$checkTurnOn = file_get_contents($mtoperSettingPath . 'turnon.txt');
-			$style = file_get_contents($mtoperSettingPath . 'style.txt');
+
+			if (file_exists($mtoperSettingPath . 'turnon.txt')) {
+				$checkTurnOn = @file_get_contents($mtoperSettingPath . 'turnon.txt');
+				$style = @file_get_contents($mtoperSettingPath . 'style.txt');
 
 
-			if ($checkTurnOn == 'on') {
 
-				if ($style !== '') {
-					echo '<link rel="stylesheet" href="' . $SITEURL . 'plugins/massiveAdmin/toper-theme/' . $style . '.css">';
-				};
+				if ($checkTurnOn == 'on') {
 
-				include(GSPLUGINPATH . 'massiveAdmin/inc/mToper.inc.php');
-			}
+					if ($style !== '') {
+						echo '<link rel="stylesheet" href="' . $SITEURL . 'plugins/massiveAdmin/toper-theme/' . $style . '.css">';
+					};
+
+					include(GSPLUGINPATH . 'massiveAdmin/inc/mToper.inc.php');
+				}
+			};
 		}
 	} else {
 		$USR = null;
@@ -240,7 +256,7 @@ if (file_exists($helpFile)) {
 	$help = i18n_r('massiveAdmin/HELP');
 
 	if ($checkTrue == 'true') {
-		add_action('nav-tab', 'createSideMenu', [$thisfile, '<i class="uil uil-life-ring"></i>' . $help, 'helpfromuser']);
+		add_action('nav-tab', 'createSideMenu', [$thisfile, '<i class="gg-support"></i>' . $help, 'helpfromuser']);
 	}
 }
 
@@ -307,6 +323,78 @@ add_action('settings-sidebar', 'createSideMenu', [$thisfile, $MassiveAdminThemeS
 
 
 
+add_action('theme-edit-extras', 'makeFileInTheme');
+
+
+function makeFileInTheme()
+{
+	include(GSPLUGINPATH . 'massiveAdmin/modules/makeFileInTheme.php');
+};
+
+
+
+$bctitle = i18n_r('massiveAdmin/BACKUPCREATOR');
+
+add_action('backups-sidebar', 'createSideMenu',  [$thisfile, $bctitle, 'backupcreator']);
+
+
+$tctitle = i18n_r('massiveAdmin/THEMECONFIGURATORNAME');
+
+add_action('theme-sidebar', 'createSideMenu',  [$thisfile, $tctitle, 'themesettings']);
+
+
+
+# theme settings functions
+
+function mats($field)
+{
+
+	$xml = simplexml_load_file(GSDATAOTHERPATH . 'website.xml');
+
+	$activeTemplate = $xml->TEMPLATE;
+
+
+	if (file_exists(GSTHEMESPATH . $activeTemplate . '/settings.json')) {
+		$data = file_get_contents(GSTHEMESPATH . $activeTemplate . '/settings.json');
+		$filx =  json_decode($data);
+
+		if($filx->settings->$field->type !== 'wysywig'){
+		echo $filx->settings->$field->value;
+		}else{
+		echo html_entity_decode($filx->settings->$field->value);
+		}
+
+		
+	} else {
+		echo i18n_r('massiveAdmin/NOSETTINGSCREATED');
+	}
+};
+
+
+function r_mats($field)
+{
+
+	$xml = simplexml_load_file(GSDATAOTHERPATH . 'website.xml');
+
+	$activeTemplate = $xml->TEMPLATE;
+
+
+	if (file_exists(GSTHEMESPATH . $activeTemplate . '/settings.json')) {
+		$data = file_get_contents(GSTHEMESPATH . $activeTemplate . '/settings.json');
+		$filx =  json_decode($data);
+
+		
+		if($filx->settings->$field->type !== 'wysywig'){
+			return $filx->settings->$field->value;
+			}else{
+			return html_entity_decode($filx->settings->$field->value);
+			}
+
+	} else {
+		echo i18n_r('massiveAdmin/NOSETTINGSCREATED');
+	}
+}
+
 
 
 # all massive option  
@@ -344,14 +432,17 @@ function massiveOption()
 		include(GSPLUGINPATH . 'massiveAdmin/modules/themeSelector.php');
 	} elseif (isset($_GET['frontendsettings'])) {
 		include(GSPLUGINPATH . 'massiveAdmin/modules/frontendSettings.php');
+	} elseif (isset($_GET['backupcreator'])) {
+		include(GSPLUGINPATH . 'massiveAdmin/modules/backupCreator.php');
+	} elseif (isset($_GET['themesettings'])) {
+		include(GSPLUGINPATH . 'massiveAdmin/modules/themesettings.php');
 	};;
 
-	echo '
-		<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" style="box-sizing:border-box; display:grid; align-items:center;width:100%;grid-template-columns:1fr auto; padding:10px !important;background:#fafafa;border:solid 1px #ddd;margin-top:20px;">
-			<p style="margin:0;padding:0;">' . i18n_r("massiveAdmin/SUPPORT") . '</p>
-			<input type="hidden" name="cmd" value="_s-xclick" />
-			<input type="hidden" name="hosted_button_id" value="KFZ9MCBUKB7GL" />
-			<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
-			<img alt="" border="0" src="https://www.paypal.com/en_PL/i/scr/pixel.gif" width="1" height="1" />
-		</form>';
+	echo "
+	<style>
+.kofitext,.kofi-button{text-decoration:none !important}
+	</style>
+	<div style='margin:20px 0;width:100%;'>
+	<script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('Support Me on Ko-fi', '#29abe0', 'I3I2RHQZS');kofiwidget2.draw();</script>
+	</div> ";
 };

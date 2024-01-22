@@ -37,14 +37,14 @@ $i18n = [
 	'SHOW' 							=> 'Show',
 	'HIDE' 							=> 'Hide',
 	'HIDSECTIONTITLE' 				=> 'What sections do you want to hide?',
-	'HIDEPAGES' 					=> 'Hide "<strong><i class="uil uil-desktop"></i> Pages</strong>" section?',
-	'HIDEFILES' 					=> 'Hide "<strong><i class="uil uil-file"></i> Files</strong>" section?',
-	'HIDETHEMES' 					=> 'Hide "<strong><i class="uil uil-paint-tool"></i> Themes</strong>" section?',
-	'HIDEBACKUP' 					=> 'Hide "<strong><i class="uil uil-save"></i> Backup</strong>" section?',
-	'HIDEPLUGIN' 					=> 'Hide "<strong><i class="uil uil-plug"></i> Plugin</strong>" section?',
-	'HIDESUPPORT' 					=> 'Hide "<strong><i class="uil uil-life-ring"></i> Support</strong>" section?',
-	'HIDESETTINGS' 					=> 'Hide "<strong><i class="uil uil-setting"></i> MassiveAdmin Settings</strong>" section?',
-	'HIDEI18NGALLERY' 				=> 'Hide "<strong><i class="uil uil-images"></i> i18n gallery</strong>" section? (if exists)',
+	'HIDEPAGES' 					=> 'Hide "<strong>Pages</strong>" section?',
+	'HIDEFILES' 					=> 'Hide "<strong>Files</strong>" section?',
+	'HIDETHEMES' 					=> 'Hide "<strong>Themes</strong>" section?',
+	'HIDEBACKUP' 					=> 'Hide "<strong>Backup</strong>" section?',
+	'HIDEPLUGIN' 					=> 'Hide "<strong>Plugin</strong>" section?',
+	'HIDESUPPORT' 					=> 'Hide "<strong>Support</strong>" section?',
+	'HIDESETTINGS' 					=> 'Hide "<strong>MassiveAdmin Settings</strong>" section?',
+	'HIDEI18NGALLERY' 				=> 'Hide "<strong>i18n gallery</strong>" section? (if exists)',
 	'HIDEUSERS' 					=> 'Hide sections for the following users:',
 
 	//user manager
@@ -126,7 +126,10 @@ $i18n = [
 	"TAB_SETTINGS"					=> 'Settings',
 	"TAB_LOGOUT"					=> 'Logout',
 
-
+	//makeFileInTheme
+	"CREATENEWFILE"					=> 'Create New File',
+	"FILECREATED"					=> 'File Created!',
+	
 	//frontend settings
 
 
@@ -134,17 +137,32 @@ $i18n = [
 
 	//admin settings
 
-	'FRONTENDTITLE' => 'Front End Settings',
-	'TURNONMTOPER' => 'Turn on frontend bar?',
-	'STYLEINFO' => 'Style for FrontEnd sidebar',
-	'ADMINTHEMESELECTOR' => 'Admin Theme Selector',
+	'FRONTENDTITLE' 				=> 'Front End Settings',
+	'TURNONMTOPER' 					=> 'Turn on frontend bar?',
+	'STYLEINFO' 					=> 'Style for FrontEnd sidebar',
+	'ADMINTHEMESELECTOR' 			=> 'Admin Theme Selector',
 
 	//manage users
 
-	'EMAIL' => 'e-mail:',
-	'PASSWORD' => 'Password:',
-	'LANG' => 'Language:',
-	'CHANGEPLACEHOLDER' => 'change only if you want to change'
+	'EMAIL' 						=> 'e-mail:',
+	'PASSWORD' 						=> 'Password:',
+	'LANG' 							=> 'Language:',
+	'CHANGEPLACEHOLDER' 			=> 'change only if you want to change',
 
 
-];;
+	//new on 5.0
+
+	'FILECREATED' 					=> 'File Created!',
+	'WATCHEXAMPLE' 					=> 'View example structure',
+	'HOWUSETHEMECONFIG' 			=> 'If you want to use settings for your template, just create <code style="color:blue;">settings.json</code> in the folder of the template you are using and apply the appropriate structure as in the example. Then apply the <b style="color:green;">mats("fieldname")</b> or <b style="color:green;">r_mats("fieldname")</b> for return function to the appropriate fields.',
+	'HOWCREATETITLE' 				=> 'How to create your own settins?',
+	'TUTORIALHOWCREATESETTINGS' 	=> 'Create your <code style="color:blue;">settings.json</code> in the root of your theme folder, with a structure based on this example with different types of options',
+	'THEMECONFIGURATORNAME' 		=> 'Theme Configurator',
+
+	'BACKUPCREATOR' 				=> 'Backup Creator',
+	'CREATEBACKUP' 					=> 'Create Backup',
+	'SETTINGS' 						=> 'Settings',
+	'NOSETTINGSCREATED' 			=> 'No settings.json created.',
+	'SHOWPASSWORD' 					=> 'Show Password'
+
+];

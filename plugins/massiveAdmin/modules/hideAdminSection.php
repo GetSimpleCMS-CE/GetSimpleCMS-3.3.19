@@ -8,7 +8,10 @@
 <div>
 
 	<div class="hidetitle" id="hidetitle3">
-		<h3><?php echo i18n_r("massiveAdmin/CREATENEWUSER"); ?></h3> <i class="uil uil-arrow-down" style="font-size:1.2rem"></i>
+		<h3><?php echo i18n_r("massiveAdmin/CREATENEWUSER"); ?></h3> 
+		
+		<svg xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 24 24" id="arrow-down" style="display:inline-block;width:20px;"><path fill="var(--main-color)" d="M17.71,11.29a1,1,0,0,0-1.42,0L13,14.59V7a1,1,0,0,0-2,0v7.59l-3.29-3.3a1,1,0,0,0-1.42,1.42l5,5a1,1,0,0,0,.33.21.94.94,0,0,0,.76,0,1,1,0,0,0,.33-.21l5-5A1,1,0,0,0,17.71,11.29Z"></path></svg>
+
 	</div>
 
 	<div class="hidecontent hidecontent3" id="hidecontent3">
@@ -81,7 +84,10 @@
 ?>
 
 <div id="hidetitle1" class="hidetitle">
-	<h3><?php echo i18n_r('massiveAdmin/HIDSECTIONTITLE'); ?></h3> <i class="uil uil-arrow-down" style="font-size:1.2rem"></i>
+	<h3><?php echo i18n_r('massiveAdmin/HIDSECTIONTITLE'); ?></h3> 
+	
+<svg xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 24 24" id="arrow-down" style="display:inline-block;width:20px;"><path fill="var(--main-color)" d="M17.71,11.29a1,1,0,0,0-1.42,0L13,14.59V7a1,1,0,0,0-2,0v7.59l-3.29-3.3a1,1,0,0,0-1.42,1.42l5,5a1,1,0,0,0,.33.21.94.94,0,0,0,.76,0,1,1,0,0,0,.33-.21l5-5A1,1,0,0,0,17.71,11.29Z"></path></svg>
+
 </div>
 
 <div id="hidecontent1" class="hidecontent hidecontent1">
@@ -163,7 +169,10 @@
 </script>
 
 <div class="hidetitle" id="hidetitle2">
-	<h3><?php echo i18n_r('massiveAdmin/USERMANAGER'); ?></h3> <i class="uil uil-arrow-down" style="font-size:1.2rem"></i>
+	<h3><?php echo i18n_r('massiveAdmin/USERMANAGER'); ?></h3> 
+	
+	<svg xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 24 24" id="arrow-down" style="display:inline-block;width:20px;"><path fill="var(--main-color)" d="M17.71,11.29a1,1,0,0,0-1.42,0L13,14.59V7a1,1,0,0,0-2,0v7.59l-3.29-3.3a1,1,0,0,0-1.42,1.42l5,5a1,1,0,0,0,.33.21.94.94,0,0,0,.76,0,1,1,0,0,0,.33-.21l5-5A1,1,0,0,0,17.71,11.29Z"></path></svg>
+
 </div>
 
 <div class="hidecontent hidecontent2">
