@@ -309,9 +309,9 @@ class MassiveAdminClass
 		$hideplugin = $_POST['hideplugin'];
 		$hidei18n = $_POST['hidei18n'];
 		$hidepages = $_POST['hidepages'];
-		$hideuser = $_POST['hideuser'];
 		$hidesupport = $_POST['hidesupport'];
 		$hidesettings = $_POST['hidesettings'];
+		$hideuser = $_POST['user'];
 
 		$json = '{
 			"hidefiles": "' . $hidefiles . '",
@@ -320,13 +320,12 @@ class MassiveAdminClass
 			"hidei18n": "' . $hidei18n . '",
 			"hideplugin":"' . $hideplugin . '",
 			"hidepages": "' . $hidepages . '",
-			"hideuser": "' . $hideuser . '",
-			"hidesupport": "' . $hidesupport . '",
+ 			"hidesupport": "' . $hidesupport . '",
 			"hidesettings": "' . $hidesettings . '"
 		}';
 
 		$massiveHiddenSection = GSDATAOTHERPATH . '/massiveHiddenSection/';
-		$filejson = 'userhidden.json';
+		$filejson = $hideuser . '.json';
 		$finaljson = $massiveHiddenSection . $filejson;
 		$chmod_mode	= 0755;
 		$folder_exists = file_exists($massiveHiddenSection) || mkdir($massiveHiddenSection, $chmod_mode);

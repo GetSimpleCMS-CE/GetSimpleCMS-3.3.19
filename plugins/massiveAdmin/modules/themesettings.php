@@ -269,7 +269,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['ssettings'])) {
     }
 
     // Zapisz zaktualizowane dane z powrotem do pliku
-    file_put_contents(GSTHEMESPATH . $activeTemplate . '/settings.json', json_encode($filx, JSON_PRETTY_PRINT));
+    file_put_contents(GSTHEMESPATH . $activeTemplate . '/settings.json', json_encode($filx, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES));
 
     echo ("<meta http-equiv='refresh' content='0'>");
 }; ?>

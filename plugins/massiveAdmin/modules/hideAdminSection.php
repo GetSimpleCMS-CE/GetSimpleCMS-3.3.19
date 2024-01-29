@@ -1,6 +1,5 @@
 <?php
-	global $SITEURL;
-; ?>
+global $SITEURL;; ?>
 <style>
 	@import url('<?php echo $SITEURL; ?>plugins/massiveAdmin/css/hideAdminSection.css');
 </style>
@@ -8,9 +7,11 @@
 <div>
 
 	<div class="hidetitle" id="hidetitle3">
-		<h3><?php echo i18n_r("massiveAdmin/CREATENEWUSER"); ?></h3> 
-		
-		<svg xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 24 24" id="arrow-down" style="display:inline-block;width:20px;"><path fill="var(--main-color)" d="M17.71,11.29a1,1,0,0,0-1.42,0L13,14.59V7a1,1,0,0,0-2,0v7.59l-3.29-3.3a1,1,0,0,0-1.42,1.42l5,5a1,1,0,0,0,.33.21.94.94,0,0,0,.76,0,1,1,0,0,0,.33-.21l5-5A1,1,0,0,0,17.71,11.29Z"></path></svg>
+		<h3><?php echo i18n_r("massiveAdmin/CREATENEWUSER"); ?></h3>
+
+		<svg xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 24 24" id="arrow-down" style="display:inline-block;width:20px;">
+			<path fill="var(--main-color)" d="M17.71,11.29a1,1,0,0,0-1.42,0L13,14.59V7a1,1,0,0,0-2,0v7.59l-3.29-3.3a1,1,0,0,0-1.42,1.42l5,5a1,1,0,0,0,.33.21.94.94,0,0,0,.76,0,1,1,0,0,0,.33-.21l5-5A1,1,0,0,0,17.71,11.29Z"></path>
+		</svg>
 
 	</div>
 
@@ -33,15 +34,14 @@
 			<br><br>
 			<select name="lang">
 				<?php
-					$files = glob("../admin/lang/*.php");
-					foreach ($files as &$value) {
+				$files = glob("../admin/lang/*.php");
+				foreach ($files as &$value) {
 
-						$old = ["../admin/lang/", ".php"];
-						$newreplace = ['', ''];
-						$new = str_replace($old, $newreplace, $value);
-						echo ' <option value="' . $new . '">' . $new . '</option>';
-					};
-				; ?>
+					$old = ["../admin/lang/", ".php"];
+					$newreplace = ['', ''];
+					$new = str_replace($old, $newreplace, $value);
+					echo ' <option value="' . $new . '">' . $new . '</option>';
+				};; ?>
 			</select>
 
 			<input type="submit" name="savecreateuser" style="width: 100%; padding: 10px; margin-top: 20px; background: #000; color: #fff; border: none; border-radius: 5px;" value="<?php echo i18n_r('massiveAdmin/CREATENEWUSER'); ?>">
@@ -63,96 +63,141 @@
 </script>
 
 <?php
-	if (isset($_COOKIE['GS_ADMIN_USERNAME'])) {
-		if (isset($_POST['savecreateuser'])) {
-			global $MA;
-			$MA->saveCreateUser();
-		};
+if (isset($_COOKIE['GS_ADMIN_USERNAME'])) {
+	if (isset($_POST['savecreateuser'])) {
+		global $MA;
+		$MA->saveCreateUser();
 	};
-; ?>
+};; ?>
 
 <?php
-	$massiveHiddenSection = GSDATAOTHERPATH . '/massiveHiddenSection/';
-	$filejson = 'userhidden.json';
-	$finaljson = $massiveHiddenSection . $filejson;
-	$chmod_mode	= 0755;
-	$folder_exists = file_exists($massiveHiddenSection) || mkdir($massiveHiddenSection, $chmod_mode);
-	if (file_exists($finaljson)) {
-		$datee = file_get_contents($finaljson);
-		$data = json_decode($datee);
-	};
+$massiveHiddenSection = GSDATAOTHERPATH . '/massiveHiddenSection/';
+$filejson = 'userhidden.json';
+$finaljson = $massiveHiddenSection . $filejson;
+$chmod_mode	= 0755;
+$folder_exists = file_exists($massiveHiddenSection) || mkdir($massiveHiddenSection, $chmod_mode);
+if (file_exists($finaljson)) {
+	$datee = file_get_contents($finaljson);
+	$data = json_decode($datee);
+};
 ?>
 
 <div id="hidetitle1" class="hidetitle">
-	<h3><?php echo i18n_r('massiveAdmin/HIDSECTIONTITLE'); ?></h3> 
-	
-<svg xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 24 24" id="arrow-down" style="display:inline-block;width:20px;"><path fill="var(--main-color)" d="M17.71,11.29a1,1,0,0,0-1.42,0L13,14.59V7a1,1,0,0,0-2,0v7.59l-3.29-3.3a1,1,0,0,0-1.42,1.42l5,5a1,1,0,0,0,.33.21.94.94,0,0,0,.76,0,1,1,0,0,0,.33-.21l5-5A1,1,0,0,0,17.71,11.29Z"></path></svg>
+	<h3><?php echo i18n_r('massiveAdmin/HIDSECTIONTITLE'); ?></h3>
+
+	<svg xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 24 24" id="arrow-down" style="display:inline-block;width:20px;">
+		<path fill="var(--main-color)" d="M17.71,11.29a1,1,0,0,0-1.42,0L13,14.59V7a1,1,0,0,0-2,0v7.59l-3.29-3.3a1,1,0,0,0-1.42,1.42l5,5a1,1,0,0,0,.33.21.94.94,0,0,0,.76,0,1,1,0,0,0,.33-.21l5-5A1,1,0,0,0,17.71,11.29Z"></path>
+	</svg>
 
 </div>
 
 <div id="hidecontent1" class="hidecontent hidecontent1">
 
-	<form action="#" method="POST" style="width:100%;height:auto" class="hideadminsectionform">
+	<?php foreach (glob(GSUSERSPATH . '*.xml') as $us) : ?>
 
-		<p><?php echo i18n_r('massiveAdmin/HIDEPAGES'); ?></p>
-		<select name="hidepages">
-			<option value="show"><?php echo i18n_r('massiveAdmin/SHOW'); ?></option>
-			<option value="hide"><?php echo i18n_r('massiveAdmin/HIDE'); ?></option>
-		</select>
 
-		<p><?php echo i18n_r('massiveAdmin/HIDEFILES'); ?></p>
-		<select name="hidefiles">
-			<option value="show"><?php echo i18n_r('massiveAdmin/SHOW'); ?></option>
-			<option value="hide"><?php echo i18n_r('massiveAdmin/HIDE'); ?></option>
-		</select>
 
-		<p><?php echo i18n_r('massiveAdmin/HIDETHEMES'); ?></p>
-		<select name="hidethemes">
-			<option value="show"><?php echo i18n_r('massiveAdmin/SHOW'); ?></option>
-			<option value="hide"><?php echo i18n_r('massiveAdmin/HIDE'); ?></option>
-		</select>
+		<?php
 
-		<p><?php echo i18n_r('massiveAdmin/HIDEBACKUP'); ?></p>
-		<select name="hidebackup">
-			<option value="show"><?php echo i18n_r('massiveAdmin/SHOW'); ?></option>
-			<option value="hide"><?php echo i18n_r('massiveAdmin/HIDE'); ?></option>
-		</select>
+		$file =  GSDATAOTHERPATH . 'massiveHiddenSection/' . pathinfo($us)['filename'] . '.json';
+		$data = '';
 
-		<p><?php echo i18n_r('massiveAdmin/HIDEPLUGIN'); ?></p>
-		<select name="hideplugin">
-			<option value="show"><?php echo i18n_r('massiveAdmin/SHOW'); ?></option>
-			<option value="hide"><?php echo i18n_r('massiveAdmin/HIDE'); ?></option>
-		</select>
+		if (file_exists($file)) {
 
-		<p><?php echo i18n_r('massiveAdmin/HIDESUPPORT'); ?></p>
-		<select name="hidesupport">
-			<option value="show"><?php echo i18n_r('massiveAdmin/SHOW'); ?></option>
-			<option value="hide"><?php echo i18n_r('massiveAdmin/HIDE'); ?></option>
-		</select>
+			$data = file_get_contents($file);
+			$data = json_decode($data);
+		} else {
+			$data = null;
+		};
 
-		<p><?php echo i18n_r('massiveAdmin/HIDESETTINGS'); ?></p>
-		<select name="hidesettings">
-			<option value="show"><?php echo i18n_r('massiveAdmin/SHOW'); ?></option>
-			<option value="hide"><?php echo i18n_r('massiveAdmin/HIDE'); ?></option>
-		</select>
 
-		<p><?php echo i18n_r('massiveAdmin/HIDEI18NGALLERY'); ?></p>
-		<select name="hidei18n">
-			<option value="show"><?php echo i18n_r('massiveAdmin/SHOW'); ?></option>
-			<option value="hide"><?php echo i18n_r('massiveAdmin/HIDE'); ?></option>
-		</select>
 
-		<br>
 
-		<div class="userhiddenoption">
-			<h4 style=""><?php echo i18n_r('massiveAdmin/HIDEUSERS'); ?></h4>
-			<input type="text" name="hideuser" style="grid-column:1/3" placeholder="example,example2,example3">
-		</div>
+		?>
 
-		<br>
-		<input type="submit" name="submit" value="<?php echo i18n_r('massiveAdmin/SAVEOPTION'); ?>" style="grid-column:1/3" />
 
-	</form>
+
+		<form method="POST" data-user="<?php echo pathinfo($us)['filename']; ?>" style="width:100%;height:auto; margin-top:20px;" class="hideadminsectionform">
+
+			<div style="width:100%;padding:5px;border:solid 1px #ddd;background:var(--main-color);color:#fff;grid-column: 1/3;font-size:1.2rem;height:auto;padding:5px;">
+				<p>User: <?php echo pathinfo($us)['filename']; ?></p>
+			</div>
+
+			<input type="hidden" name="user" value="<?php echo pathinfo($us)['filename']; ?>">
+
+			<p><?php echo i18n_r('massiveAdmin/HIDEPAGES'); ?></p>
+			<select name="hidepages">
+				<option value="show"><?php echo i18n_r('massiveAdmin/SHOW'); ?></option>
+				<option value="hide"><?php echo i18n_r('massiveAdmin/HIDE'); ?></option>
+			</select>
+
+			<p><?php echo i18n_r('massiveAdmin/HIDEFILES'); ?></p>
+			<select name="hidefiles">
+				<option value="show"><?php echo i18n_r('massiveAdmin/SHOW'); ?></option>
+				<option value="hide"><?php echo i18n_r('massiveAdmin/HIDE'); ?></option>
+			</select>
+
+			<p><?php echo i18n_r('massiveAdmin/HIDETHEMES'); ?></p>
+			<select name="hidethemes">
+				<option value="show"><?php echo i18n_r('massiveAdmin/SHOW'); ?></option>
+				<option value="hide"><?php echo i18n_r('massiveAdmin/HIDE'); ?></option>
+			</select>
+
+			<p><?php echo i18n_r('massiveAdmin/HIDEBACKUP'); ?></p>
+			<select name="hidebackup">
+				<option value="show"><?php echo i18n_r('massiveAdmin/SHOW'); ?></option>
+				<option value="hide"><?php echo i18n_r('massiveAdmin/HIDE'); ?></option>
+			</select>
+
+			<p><?php echo i18n_r('massiveAdmin/HIDEPLUGIN'); ?></p>
+			<select name="hideplugin">
+				<option value="show"><?php echo i18n_r('massiveAdmin/SHOW'); ?></option>
+				<option value="hide"><?php echo i18n_r('massiveAdmin/HIDE'); ?></option>
+			</select>
+
+			<p><?php echo i18n_r('massiveAdmin/HIDESUPPORT'); ?></p>
+			<select name="hidesupport">
+				<option value="show"><?php echo i18n_r('massiveAdmin/SHOW'); ?></option>
+				<option value="hide"><?php echo i18n_r('massiveAdmin/HIDE'); ?></option>
+			</select>
+
+			<p><?php echo i18n_r('massiveAdmin/HIDESETTINGS'); ?></p>
+			<select name="hidesettings">
+				<option value="show"><?php echo i18n_r('massiveAdmin/SHOW'); ?></option>
+				<option value="hide"><?php echo i18n_r('massiveAdmin/HIDE'); ?></option>
+			</select>
+
+			<p><?php echo i18n_r('massiveAdmin/HIDEI18NGALLERY'); ?></p>
+			<select name="hidei18n">
+				<option value="show"><?php echo i18n_r('massiveAdmin/SHOW'); ?></option>
+				<option value="hide"><?php echo i18n_r('massiveAdmin/HIDE'); ?></option>
+			</select>
+
+			<br>
+
+
+
+			<br>
+			<input type="submit" name="submit" value="<?php echo i18n_r('massiveAdmin/SAVEOPTION'); ?>" style="grid-column:1/3" />
+
+		</form>
+
+		<?php 	if (file_exists($file)) :?>
+
+		<script>
+			document.querySelector('form[data-user="<?php echo pathinfo($us)['filename']; ?>"] select[name="hidepages"]').value = '<?php echo $data->hidepages ?>';
+			document.querySelector('form[data-user="<?php echo pathinfo($us)['filename']; ?>"] select[name="hidefiles"]').value = '<?php echo $data->hidefiles ?>';
+			document.querySelector('form[data-user="<?php echo pathinfo($us)['filename']; ?>"] select[name="hidethemes"]').value = '<?php echo $data->hidethemes ?>';
+			document.querySelector('form[data-user="<?php echo pathinfo($us)['filename']; ?>"] select[name="hidebackup"]').value = '<?php echo $data->hidebackup ?>';
+			document.querySelector('form[data-user="<?php echo pathinfo($us)['filename']; ?>"] select[name="hideplugin"]').value = '<?php echo $data->hideplugin ?>';
+			document.querySelector('form[data-user="<?php echo pathinfo($us)['filename']; ?>"] select[name="hidesupport"]').value = '<?php echo $data->hidesupport ?>';
+			document.querySelector('form[data-user="<?php echo pathinfo($us)['filename']; ?>"] select[name="hidesettings"]').value = '<?php echo $data->hidesettings ?>';
+			document.querySelector('form[data-user="<?php echo pathinfo($us)['filename']; ?>"] select[name="hidei18n"]').value = '<?php echo $data->hidei18n ?>';
+		</script>
+
+		<?php endif;?>
+
+	<?php endforeach; ?>
 
 </div>
 
@@ -169,18 +214,19 @@
 </script>
 
 <div class="hidetitle" id="hidetitle2">
-	<h3><?php echo i18n_r('massiveAdmin/USERMANAGER'); ?></h3> 
-	
-	<svg xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 24 24" id="arrow-down" style="display:inline-block;width:20px;"><path fill="var(--main-color)" d="M17.71,11.29a1,1,0,0,0-1.42,0L13,14.59V7a1,1,0,0,0-2,0v7.59l-3.29-3.3a1,1,0,0,0-1.42,1.42l5,5a1,1,0,0,0,.33.21.94.94,0,0,0,.76,0,1,1,0,0,0,.33-.21l5-5A1,1,0,0,0,17.71,11.29Z"></path></svg>
+	<h3><?php echo i18n_r('massiveAdmin/USERMANAGER'); ?></h3>
+
+	<svg xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 24 24" id="arrow-down" style="display:inline-block;width:20px;">
+		<path fill="var(--main-color)" d="M17.71,11.29a1,1,0,0,0-1.42,0L13,14.59V7a1,1,0,0,0-2,0v7.59l-3.29-3.3a1,1,0,0,0-1.42,1.42l5,5a1,1,0,0,0,.33.21.94.94,0,0,0,.76,0,1,1,0,0,0,.33-.21l5-5A1,1,0,0,0,17.71,11.29Z"></path>
+	</svg>
 
 </div>
 
 <div class="hidecontent hidecontent2">
 	<ul class="user-list">
 		<?php
-			global $MA;
-			$MA->userList();
-		; ?>
+		global $MA;
+		$MA->userList();; ?>
 	</ul>
 
 	<script>
@@ -207,83 +253,13 @@
 	</script>
 </div>
 
-<script>
-	document.querySelector('input[name="createuserhidden"]').addEventListener('keyup', (x) => {
-		const valuethis = document.querySelector('input[name="createuserhidden"]').value;
-		console.log(valuethis);
 
-		if (valuethis == nodelete) {
-			document.querySelector('input[name="savecreateuser"]').addEventListener('click', btn => {
-				alert('<?php echo i18n_r("massiveAdmin/CHANGENAME"); ?>');
-				document.querySelector('input[name="createuserhidden"]').value = "";
-				btn.preventDefault();
-			});
-		}
-	})
-
-	if (name === nodelete) {
-		x.querySelector('.delete-this').remove();
-		x.querySelector('span').insertAdjacentHTML('beforeend', '(ADMIN)');
-	}
-
-	if ('<?php echo $data->hidepages; ?>' == "show") {
-		document.querySelector('select[name="hidepages"]').value = "show";
-	} else if ('<?php echo $data->hidepages; ?>' == "hide") {
-		document.querySelector('select[name="hidepages"]').value = "hide";
-	};
-
-	if ('<?php echo $data->hidefiles; ?>' == "show") {
-		document.querySelector('select[name="hidefiles"]').value = "show";
-	} else if ('<?php echo $data->hidefiles; ?>' == "hide") {
-		document.querySelector('select[name="hidefiles"]').value = "hide";
-	};
-
-	if ('<?php echo $data->hidethemes; ?>' == "show") {
-		document.querySelector('select[name="hidethemes"]').value = "show";
-	} else if ('<?php echo $data->hidethemes; ?>' == "hide") {
-		document.querySelector('select[name="hidethemes"]').value = "hide";
-	};
-
-	if ('<?php echo $data->hidebackup; ?>' == "show") {
-		document.querySelector('select[name="hidebackup"]').value = "show";
-	} else if ('<?php echo $data->hidebackup; ?>' == "hide") {
-		document.querySelector('select[name="hidebackup"]').value = "hide";
-	};
-
-	if ('<?php echo $data->hideplugin; ?>' == "show") {
-		document.querySelector('select[name="hideplugin"]').value = "show";
-	} else if ('<?php echo $data->hideplugin; ?>' == "hide") {
-		document.querySelector('select[name="hideplugin"]').value = "hide";
-	};
-	
-	if ('<?php echo $data->hidei18n; ?>' == "show") {
-		document.querySelector('select[name="hidei18n"]').value = "show";
-	} else if ('<?php echo $data->hidei18n; ?>' == "hide") {
-		document.querySelector('select[name="hidei18n"]').value = "hide";
-	};
-
-	if ('<?php echo $data->hidesupport; ?>' == "show") {
-		document.querySelector('select[name="hidesupport"]').value = "show";
-	} else if ('<?php echo $data->hidesupport; ?>' == "hide") {
-		document.querySelector('select[name="hidesupport"]').value = "hide";
-	};
-
-	if ('<?php echo $data->hidesettings; ?>' == "show") {
-		document.querySelector('select[name="hidesettings"]').value = "show";
-	} else if ('<?php echo $data->hidesettings; ?>' == "hide") {
-		document.querySelector('select[name="hidesettings"]').value = "hide";
-	};
-
-	if ('<?php echo $data->hideuser; ?>'.length > 0) {
-		document.querySelector('input[name="hideuser"]').value = '<?php echo $data->hideuser; ?>';
-	}
-</script>
 
 <?php
 if (isset($_POST['submit'])) {
 	global $MA;
 	$MA->submitHideAdminSection();
-}; 
+};
 
 
 
