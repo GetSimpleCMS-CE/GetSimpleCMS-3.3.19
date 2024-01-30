@@ -255,10 +255,14 @@ get_template('header', $site_full_name.' CE &raquo; '. i18n_r('INSTALLATION') );
 
 				<select name="theme" style="width:100%;padding:10px;border:solid 1px #ddd; background:#fff;margin-bottom:5px;">
 
-					<?php foreach (glob(GSPLUGINPATH . 'massiveAdmin/theme/*.css') as $style) {
-						$pure = pathinfo($style)['filename'];
-						echo '<option value="' . $pure . '" ' . ($fileOptionCheck == $pure ? 'selected' : '') . '>' . $pure . '</option>';
-					}; ?>
+					<?php 
+						$fileOptionCheck = '';
+
+						foreach (glob(GSPLUGINPATH . 'massiveAdmin/theme/*.css') as $style) {
+							$pure = pathinfo($style)['filename'];
+							echo '<option value="' . $pure . '" ' . ($fileOptionCheck == $pure ? 'selected' : '') . '>' . $pure . '</option>';
+						}; 
+					?>
 
 				</select>
  
